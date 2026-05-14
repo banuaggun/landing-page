@@ -1,0 +1,25 @@
+.vision{
+    border:1px solid red; 
+    max-width:550px; 
+    padding:40px 0; 
+    background-color: white; 
+    border-radius: 40px 0 40px 0px; 
+    text-align: left;
+} 
+
+.vision-content{
+    padding:0 20px 0 0;
+}
+
+.vision-content h2{
+    line-height: 40px;
+    padding:0 8px; 
+    font-size: 2.5rem;
+} 
+
+.vision-content h2 > span{
+    background-color: mediumaquamarine; 
+    padding:0px 12px;
+    border-radius: 40px;  
+    line-height: 10px;
+}
