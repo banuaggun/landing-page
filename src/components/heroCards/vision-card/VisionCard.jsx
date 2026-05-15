@@ -6,8 +6,8 @@ const VisionCard = () => {
   return (
     <div className='vision'>
         <div className='vision-content'>
-            <h2>Advanced <span>e-commerce</span> <br/> analytics products </h2> 
-            <p>Quo, neque minima! In laborum, mollitia et repellat, tenetur quibusdam cum cumque a sequi eveniet maxime voluptatibus quia!</p>
+            <h2>Advanced <span>e-commerce</span> analytics products</h2>
+      <p>Build analytics platforms that provide deep insights into customer behavior and help businesses optimize their e-commerce operations.</p>
         </div>
     </div>
   )
