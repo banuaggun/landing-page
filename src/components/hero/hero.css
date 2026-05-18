@@ -11,10 +11,10 @@
   max-width: 1200px;
   margin: 10px auto;
   padding: 0px 20px 40px 0;  
-  background-image: url("../../assets/bg.jpg"); 
+ background-image: url("../../assets/image.png"); 
   background-repeat: no-repeat; 
   background-size: cover; 
-  height: 100%;
+  height: 100vh;
 }
 
 .hero {
@@ -22,6 +22,26 @@
   grid-template-columns: 50% 50%;
   gap: 20px;
   align-items: stretch; 
+} 
+
+.hero:first-child {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+} 
+
+.hero:last-child {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
 }
 
 .hero-right {
@@ -33,4 +53,48 @@
 .hero-right:nth-child(1), 
 .hero-right:nth-child(2){
   width:calc(100% - 24px);
+} 
+
+.cards {
+  display: grid;
+  grid-template-columns: 50% 30% 20%;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+} 
+
+@media only screen and (max-width: 480px) { 
+  .wrapper{
+    padding:0 20px 40px 20px;
+  }
+  .hero {
+    grid-template-columns: 1fr; 
+    margin:0 auto;
+  }  
+  .hero-right {
+    flex-direction: column;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+} 
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-right {
+    flex-direction: row;
+    justify-content: space-between; 
+  }
+  .team-card, .goalcard, .stats-card, .revenue-card{
+    flex: 1 1 48%;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .servicecard {
+    grid-column: 1 / 3;
+  }
 }
