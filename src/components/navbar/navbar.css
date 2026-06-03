@@ -1,6 +1,177 @@
-.navbar{
-    width:100%; 
-    height:80px;  
-    box-sizing: border-box;
-    border:1px solid greenyellow; 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* Genişliğin ekrandan taşmasını önler */
+  z-index: 1000; /* Her zaman en üstte kalmasını sağlar */
+} 
+
+.navbar-left{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
 }
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0078d7; 
+  margin-right:40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0078d7;
+}
+
+.nav-links a.active {
+  color: #0078d7;
+  font-weight: 600;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 2px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.call-center {
+  font-size: 14px;
+  color: #555;
+}
+
+.quote-btn {
+  background-color: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quote-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001; /* Menünün üstünde kalması için */
+}
+
+.hamburger span {
+   width: 26px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* Animasyon hızı ve akıcılığı */
+  transform-origin: center; /* Dönüş ekseni merkez olsun */
+}
+
+/* --- Önceki tüm masaüstü kodlarınız aynen kalıyor --- */
+
+/* Mobil Görünüm Düzenlemeleri */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px; /* Mobilde taşmayı önlemek için padding'i azalttık */
+  }
+
+  /* Hamburger butonunu görünür yap */
+  .hamburger {
+    display: flex;
+  }  
+
+   /* Üst çizgi: Aşağı kayar ve 45 derece sağa döner */
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  /* Orta çizgi: Tamamen şeffaf olur ve kaybolur */
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px); /* Sola doğru kayarak yok olma efekti */
+  } 
+
+  /* Alt çizgi: Yukarı kayar ve 45 derece sola döner */
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Linkler ve Sağ alanın birleştiği ana mobil menü gövdesi */
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Doğrudan navbar'ın bittiği alt sınırdan başlar */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    
+    /* Açılış animasyonu için display:none yerine görünmezlik kullanıyoruz */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Menü açıldığında linklerin görünmesi */
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Masaüstündeki sağ alanı mobilde varsayılan olarak gizle */
+  .navbar-right {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eeeeee; /* Linklerden ayırmak için ince çizgi */
+    align-items: center;
+  }
+
+  /* Menü açıldığında sağ alan .nav-links'in altında görünür */
+  .navbar-right.mobile-show {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 180px); /* Linkler alanının yüksekliğine göre aşağı kaydırıyoruz */
+    left: 0;
+    background: #ffffff;
+    padding-bottom: 24px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
