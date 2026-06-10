@@ -9,14 +9,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box; /* Genişliğin ekrandan taşmasını önler */
-  z-index: 1000; /* Her zaman en üstte kalmasını sağlar */
-} 
+  box-sizing: border-box;
+  /* Genişliğin ekrandan taşmasını önler */
+  z-index: 1000;
+  /* Her zaman en üstte kalmasını sağlar */
+}
 
-.navbar-left{
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -24,8 +26,8 @@
   font-size: 22px;
   font-weight: bold;
   text-decoration: none;
-  color: #0078d7; 
-  margin-right:40px;
+  color: #0078d7;
+  margin-right: 40px;
 }
 
 .nav-links {
@@ -83,16 +85,19 @@
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  z-index: 1001; /* Menünün üstünde kalması için */
+  z-index: 1001;
+  /* Menünün üstünde kalması için */
 }
 
 .hamburger span {
-   width: 26px;
+  width: 26px;
   height: 3px;
   background: #333;
   border-radius: 2px;
-  transition: all 0.3s ease-in-out; /* Animasyon hızı ve akıcılığı */
-  transform-origin: center; /* Dönüş ekseni merkez olsun */
+  transition: all 0.3s ease-in-out;
+  /* Animasyon hızı ve akıcılığı */
+  transform-origin: center;
+  /* Dönüş ekseni merkez olsun */
 }
 
 /* --- Önceki tüm masaüstü kodlarınız aynen kalıyor --- */
@@ -100,34 +105,30 @@
 /* Mobil Görünüm Düzenlemeleri */
 @media (max-width: 768px) {
   .navbar {
-    padding: 24px 32px; /* Mobilde taşmayı önlemek için padding'i azalttık */
+    padding: 40px 32px 8px 32px; 
+
   }
 
-  /* Hamburger butonunu görünür yap */
   .hamburger {
     display: flex;
-  }  
+  }
 
-   /* Üst çizgi: Aşağı kayar ve 45 derece sağa döner */
   .hamburger.open span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  /* Orta çizgi: Tamamen şeffaf olur ve kaybolur */
   .hamburger.open span:nth-child(2) {
     opacity: 0;
-    transform: translateX(-10px); /* Sola doğru kayarak yok olma efekti */
-  } 
+    transform: translateX(-10px);
+  }
 
-  /* Alt çizgi: Yukarı kayar ve 45 derece sola döner */
   .hamburger.open span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Linkler ve Sağ alanın birleştiği ana mobil menü gövdesi */
   .nav-links {
     position: absolute;
-    top: 100%; /* Doğrudan navbar'ın bittiği alt sınırdan başlar */
+    top: 100%;
     left: 0;
     width: 100%;
     background: #ffffff;
@@ -137,7 +138,7 @@
     padding: 24px 0;
     border-top: 1px solid #e5e5e5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    
+
     /* Açılış animasyonu için display:none yerine görünmezlik kullanıyoruz */
     opacity: 0;
     visibility: hidden;
@@ -159,7 +160,8 @@
     flex-direction: column;
     gap: 16px;
     padding-top: 16px;
-    border-top: 1px solid #eeeeee; /* Linklerden ayırmak için ince çizgi */
+    border-top: 1px solid #eeeeee;
+    /* Linklerden ayırmak için ince çizgi */
     align-items: center;
   }
 
@@ -167,11 +169,11 @@
   .navbar-right.mobile-show {
     display: flex;
     position: absolute;
-    top: calc(100% + 180px); /* Linkler alanının yüksekliğine göre aşağı kaydırıyoruz */
+    top: calc(100% + 180px);
+    /* Linkler alanının yüksekliğine göre aşağı kaydırıyoruz */
     left: 0;
     background: #ffffff;
     padding-bottom: 24px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   }
 }
-

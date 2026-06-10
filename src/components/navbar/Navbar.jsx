@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
+import logo from "../../assets/logos/logo-1.svg";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -7,34 +8,31 @@ const Navbar = () => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
-    setIsOpen(false); // mobilde menü kapansın
+    setIsOpen(false); 
   }; 
 
- // Sayfa kaydırıldıkça hangi bölümün ekranda olduğunu yakalayan sistem 🚀
   useEffect(() => {
-    // Takip etmek istediğimiz section ID'lerini bir diziye alıyoruz
+   
     const sectionIds = ["home", "products", "solutions", "services", "configure"];
     
     const observers = [];
 
     const observerOptions = {
-      root: null, // Tarayıcı penceresini baz alır
-      rootMargin: "-40% 0px -50% 0px", // Ekranın tam ortasına gelen bölümü yakalamak için hassasiyet ayarı
+      root: null, 
+      rootMargin: "-40% 0px -50% 0px", 
       threshold: 0,
     };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
-        // Eğer o bölüm ekranın ortasındaysa (kesişiyorsa)
         if (entry.isIntersecting) {
-          setActiveLink(entry.target.id); // Aktif link state'ini o bölümün ID'si ile güncelle
+          setActiveLink(entry.target.id); 
         }
       });
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Her bir section elementini bulup observer'a kaydediyoruz
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -43,7 +41,6 @@ const Navbar = () => {
       }
     });
 
-    // Bileşen kapandığında (unmount) hafıza sızıntısını önlemek için temizlik yapıyoruz
     return () => {
       observers.forEach(({ observer, element }) => {
         observer.unobserve(element);
@@ -55,7 +52,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <a href="/" className="logo" onClick={() => handleLinkClick("home")}>LOGO</a>
+        <a href="/" className="logo" onClick={() => handleLinkClick("home")}>
+        <img src={logo} alt="logo" />
+        </a>
         <div className={`nav-links ${isOpen ? "open" : ""}`}>
           <a
             href="#products"
