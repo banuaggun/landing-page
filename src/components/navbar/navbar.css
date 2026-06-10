@@ -100,7 +100,7 @@
 /* Mobil Görünüm Düzenlemeleri */
 @media (max-width: 768px) {
   .navbar {
-    padding: 16px 24px; /* Mobilde taşmayı önlemek için padding'i azalttık */
+    padding: 24px 32px; /* Mobilde taşmayı önlemek için padding'i azalttık */
   }
 
   /* Hamburger butonunu görünür yap */
