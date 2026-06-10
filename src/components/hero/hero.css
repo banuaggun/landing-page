@@ -97,7 +97,8 @@ p {
 .hero-btn span {
   margin-right: 8px;
   font-family: "Manrope", sans-serif;
-  font-weight: 600;
+  font-weight: 600; 
+  text-transform: capitalize;
 }
 
 /* floating css */
@@ -326,7 +327,7 @@ p {
     margin: 0 40px;
   }
   .hero-title {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .floating-badges {
     margin: 30px auto;
