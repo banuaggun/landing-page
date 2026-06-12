@@ -1,5 +1,8 @@
 import React from "react";
-import "./hero.css"; 
+import "./hero.css";  
+import "./web.css";  
+import "./tablet.css"; 
+import "./tablet-1.css";
 import { DiamondIcon, RightArrowIcon } from "../icons/Icons.jsx"; 
 import user1 from "../../assets/user-images/user-1.png";
 import user2 from "../../assets/user-images/user-2.png";
@@ -9,10 +12,11 @@ const Hero = () => {
   return (
     <div className="hero-section">
       <div className="hero-container">
+        
         <div className="hero-wrapper">
           <div className="hero-wrapper-content">
             <h1 className="hero-title">
-              Smart Green Future for <br /> Your Legacy
+              Smart Green Future <br/> for Your Legacy
             </h1>
             <p className="hero-subtitle">
              Every tree we plant and protect today secures a healthier, greener world for generations to come.
@@ -41,7 +45,8 @@ const Hero = () => {
           </div>
         </div>
 
-       <div className="hero-mini-card">
+<div className="hero-live">
+ <div className="hero-mini-card">
             <div className="user-avatars">
               <img src={user3} alt="user" />
               <img
@@ -62,12 +67,14 @@ const Hero = () => {
         <div className="hero-cta">
           <div className="hero-cta-wrapper">
             <button className="hero-btn">
-              <span>Let's Protect our green future</span>   <RightArrowIcon /></button>
+              <span className="hero-subtitle">Let's Protect our green future</span>   <RightArrowIcon /></button>
           
           </div>
 
           
         </div>
+</div>
+      
       </div>
     </div>
   );
