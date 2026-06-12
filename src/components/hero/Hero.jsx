@@ -1,8 +1,5 @@
 import React from "react";
 import "./hero.css";  
-import "./web.css";  
-import "./tablet.css"; 
-import "./tablet-1.css";
 import { DiamondIcon, RightArrowIcon } from "../icons/Icons.jsx"; 
 import user1 from "../../assets/user-images/user-1.png";
 import user2 from "../../assets/user-images/user-2.png";
