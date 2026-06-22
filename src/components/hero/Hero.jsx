@@ -12,10 +12,10 @@ const Hero = () => {
         
         <div className="hero-wrapper">
           <div className="hero-wrapper-content">
-            <h1 className="hero-title">
+            <h1 className="hero-title fonts-header">
               Smart Green Future <br/> for Your Legacy
             </h1>
-            <p className="hero-subtitle">
+            <p className="hero-subtitle fonts-body">
              Every tree we plant and protect today secures a healthier, greener world for generations to come.
             </p>
           </div>
