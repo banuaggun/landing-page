@@ -1,6 +1,11 @@
 :root{
   --font-family-1:"Cormorant Garamond", serif; 
-  --font-family-2:"Manrope", sans-serif;
+  --font-family-2:"Manrope", sans-serif;  
+  --white:#ffffff;
+  --header-color:#000000;
+  --text-color:#212121; 
+  --primary-green: #184823; 
+  --btn-border-color:#87EA96;
 } 
 
 .fonts-header{
