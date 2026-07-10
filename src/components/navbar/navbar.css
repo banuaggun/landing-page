@@ -38,12 +38,23 @@
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  text-decoration: none; 
+  border:none;
 }
 
 .logo img {
   height: auto;
   width: auto;
+} 
+
+.logo:hover{
+  cursor: pointer; 
+} 
+
+.logo.active, .logo:focus{
+  cursor: pointer; 
+  outline: none; 
+  border:none;
 }
 
 .call-center {
