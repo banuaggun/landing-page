@@ -209,7 +209,7 @@
 
 @media (min-width: 1027px) {
   .navbar-content {
-    padding: 40px 80px 16px 80px;
+    padding: 20px 80px 16px 80px;
   }
   .nav-left-group {
     display: flex;

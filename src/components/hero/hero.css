@@ -7,37 +7,42 @@ h6,
 p {
   margin: 0;
   padding: 0;
+} 
+
+.hero-title{
+  color:var(--header-color);
+} 
+
+.hero-subtitle{
+  color: var(--text-color);
 }
 
-.hero-section {
-  position: relative;
-  width: 100%; 
-  height: 100%; 
-  min-height: 95vh; 
-  
+.hero-section{
+  position: relative; 
+  width:100%; 
+  height:100vh;  
+
   background-image: url("../../assets/bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; 
-  background-color: #ffffff;
-  
+  background-color: #ffffff; 
+
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  color: #212121; 
+  align-items: flex-start; 
 
-  padding-bottom: 40px;
+  padding-bottom:40px;
 } 
 
 .hero-container{
-    width:calc(100% - 48px); 
-    height:100%; 
-    margin:0 auto;  
-    padding-top:120px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    gap:50px;
+  width:calc(100% - 48px); 
+  height:100%; 
+  margin:0 auto; 
+  display:flex; 
+  flex-direction: column; 
+
+  padding-top: 40px;
 } 
 
 .hero-text-block{
@@ -46,7 +51,8 @@ p {
     gap:30px;
 } 
 
-/* floating css */
+/* floating badges */
+
 .floating-badges {
   display: flex;
   flex-direction: column;
@@ -59,7 +65,7 @@ p {
 .badge {
   display: flex;
   align-items: center;
-} 
+}  
 
 .badge span.text {
   padding: 0px 16px;
@@ -68,12 +74,11 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  color: #333;
+  color: var(--header-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
 } 
 
 .badge span.icon {
-  border-radius: 100px;
   width: 36px;
   height: 36px;
   display: flex;
@@ -97,32 +102,28 @@ p {
 .badge-3 .text,
 .badge-3 .icon {
   background-color: #cee5ff;
-}
+} 
 
 .badge-2 .text,
 .badge-2 .icon {
   background-color: #efd6f3;
 } 
 
-
-@media (min-width: 480px) {
-  .floating-badges {
-    width: 295px;
+@media (max-width:350px){
+  .floating-badges{
+    width:290px; 
+    margin:50px auto;
   }
 }
 
-@media (max-width: 350px) {
-  .floating-badges {
-    width: 270px;
+@media (min-width:351px){
+  .floating-badges{
+    width:345px; 
+    margin:50px auto;
   }
-} 
+}  
 
-@media (max-width:640px){
-  .floating-badges{ 
-    margin:50px auto 0 auto;
-  }
-}
-/* floating css */ 
+/* floating badges */
 
 .hero-bottom-row{
   display: flex; 
@@ -130,7 +131,7 @@ p {
   align-items: stretch; 
   gap:50px; 
   margin:0 auto;
-}
+} 
 
 /* hero mini card */
 .hero-mini-card {
@@ -142,12 +143,12 @@ p {
   border: 1px solid #fffbf8;
   border-radius: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center; 
   justify-content: center;
   gap: 12px; 
-  padding:24px 16px;
-} 
+  padding:22px;
+}  
 
 .user-avatars {
   display: flex;
@@ -160,14 +161,24 @@ p {
 }
 .user-avatars img.overlap {
   margin-left: -20px;
-}
+} 
 
 .card-text {
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
 }  
 
-/* hero mini card */ 
+@media (max-width:376px){
+  .hero-mini-card{
+    display: flex; 
+    flex-direction: column; 
+    gap:12px;
+  }
+}
+
+/* hero mini card */  
+
+/* hero btn */ 
 
 .hero-cta{
   width:100%; 
@@ -179,9 +190,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center; 
-  gap:12px;
   background-color: rgba(11, 53, 17, 0.8);
-  color: #ffffff;
+  color: var(--white);
   border: 2px solid rgba(135, 234, 150, 0.4);
   padding: 16px 0px;
   border-radius: 80px;
@@ -190,87 +200,170 @@ p {
   white-space: nowrap;
 } 
 
-@media (min-width:641px) and (max-width:1022px){ 
+/* hero btn */ 
+
+@media (min-width:598px){
   .hero-section{
     width:100%; 
-    min-height:800px;
-    height: 800px;
-  }
+    min-height:800px;  
+    height:800px;
+  } 
   .hero-container{ 
-    width:calc(100% - 128px); 
+    width:calc(100% - 48px); 
     margin:0 auto; 
-    padding-top:159px; 
+    padding-top:62px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+  }  
+  .hero-top-row{
+    width: 100%; 
+    height: auto; 
+  }
+
+  .hero-text-block{
+    width:90%; 
+  }
+  .hero-text-block p{
+    width:80%;
+  } 
+  .floating-badges{
+    position: absolute; 
+    top:240px; 
+    right:24px; 
+    width:300px;
+  } 
+ 
+  .hero-bottom-row{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    padding-top:180px;
+  } 
+
+  .hero-mini-card{
     display: flex; 
     flex-direction: column; 
   } 
-  .hero-top-row{
-    width:100%; 
-    height: auto; 
+  .hero-btn{
+    padding: 16px 30px;
   }
+} 
+
+@media (min-width:700px){ 
+  .hero-section{
+    width:100%; 
+    min-height:800px;  
+    height:800px;
+  } 
+  .hero-container{ 
+    width:calc(100% - 128px); 
+    margin:0 auto; 
+    padding-top:70px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+  }  
   .hero-text-block{
-    width:70%; 
+    width: 70%;
   } 
   .hero-text-block p{
     width:65%;
   }
   .floating-badges{
-    position: absolute;  
-    top:400px; 
+    position: absolute; 
+    top:240px; 
     right:64px; 
+    width:320px;
   } 
+
+  .badge span.text{
+    height: 44px;
+  } 
+  .badge span.icon{
+    width:44px; 
+    height: 44px;
+  } 
+  .badge span.icon svg{
+    width:24px; 
+    height:24px;
+  }
   .hero-bottom-row{
     display: flex; 
-    flex-direction: row;
+    flex-direction: row; 
     justify-content: space-between; 
     align-items: flex-end; 
-    margin-top:67px;
+    padding-top:180px; 
+  } 
+
+  .hero-mini-card{
+    display: flex; 
+    flex-direction: column; 
+  } 
+  .hero-cta{
+    display: flex; 
+    justify-content: flex-end; 
+  }
+  .hero-btn{
+    padding: 16px 55px; 
+    max-width: 300px; 
   }
 } 
 
-@media (min-width:1023px) and (max-width:1300px){
+@media (min-width:1200px){
   .hero-section{
     width:100%; 
-    min-height:800px;
-    height: 800px;
-  }
+    min-height:640px;  
+    height:640px;
+  } 
   .hero-container{ 
-    width:calc(100% - 128px); 
+    width:calc(100% - 160px); 
+    height:610px;
     margin:0 auto; 
-    padding-top:159px; 
+    padding-top:40px; 
+    padding-bottom: 60px; 
     display: flex; 
     flex-direction: column; 
-    justify-content: space-between;
-  } 
-   .hero-top-row{
-    width:100%; 
-    height: auto; 
-  }
+    justify-content: center;
+  }  
   .hero-text-block{
-    width:80%; 
+    width: 80%;
   } 
   .hero-text-block p{
     width:80%;
-  }
-  .floating-badges{
-    position: absolute;  
-    top:400px; 
-    right:64px;  
-    width:30%;
   } 
-  .hero-bottom-row{ 
-    width:100%; 
-    margin:0 auto;
-    display: grid; 
-    grid-template-columns: 50% 35%; 
-    flex-direction: row;
+  .floating-badges{
+    position: absolute; 
+    top:200px; 
+    right:80px; 
+    width:430px;
+  } 
+
+  .badge span.text{
+    height: 44px;
+  } 
+  .badge span.icon{
+    width:44px; 
+    height: 44px;
+  } 
+  .badge span.icon svg{
+    width:24px; 
+    height:24px;
+  } 
+  .hero-bottom-row{
+    display: flex; 
+    flex-direction: row; 
     justify-content: space-between; 
     align-items: flex-end; 
+    padding-top:120px;
   } 
+
   .hero-mini-card{
     display: flex; 
     flex-direction: row; 
-    gap:24px; 
-    padding:24px 24px;  
+    gap:24px;
+    padding: 24px;
   } 
   .user-avatars img {
   width: 52px;
@@ -278,71 +371,67 @@ p {
 }
   .hero-cta{
     display: flex; 
-    align-items: stretch; 
-    justify-content: flex-end;
-    width:100%; 
+    justify-content: flex-end; 
   }
   .hero-btn{
-    width:100%; 
+    padding: 16px 75px; 
+    max-width: 341px; 
   }
 } 
 
-@media (min-width:1301px) and (max-width:1400px){
+@media (min-width:1400px){
   .hero-section{
     width:100%; 
-    height:100vh; 
-    min-height: 100vh;
+    min-height:800px;  
+    height:800px;
   } 
   .hero-container{ 
-    width:calc(100% - 160px); 
+    width:calc(100% - 200px); 
+    height:610px;
     margin:0 auto; 
     padding-top:80px; 
     display: flex; 
     flex-direction: column; 
     justify-content: space-between;
-  } 
-  .hero-top-row{
-    width:100%; 
-    height: auto; 
-  }
+  }  
   .hero-text-block{
-    width:80%; 
+    width: 80%;
   } 
   .hero-text-block p{
     width:80%;
   } 
   .floating-badges{
-    position: absolute;  
-    top:305px; 
-    right:80px;  
-    width:30%;
+    position: absolute; 
+    top:280px; 
+    right:80px; 
+    width:430px;
   } 
+
   .badge span.text{
-    height:44px; 
-    width:100%;
-  }
+    height: 44px;
+  } 
   .badge span.icon{
     width:44px; 
-    height:44px;
+    height: 44px;
   } 
   .badge span.icon svg{
     width:24px; 
     height:24px;
-  }
-  .hero-bottom-row{ 
-    width:100%; 
-    margin:0 auto;
-    display: grid; 
-    grid-template-columns: 45% 35%; 
-    flex-direction: row;
+  } 
+  .hero-bottom-row{
+    display: flex; 
+    flex-direction: row; 
     justify-content: space-between; 
     align-items: flex-end; 
+    width:100%;
+    padding-top:200px;
   } 
+
   .hero-mini-card{
     display: flex; 
     flex-direction: row; 
-    gap:24px; 
-    padding:24px 24px;  
+    gap:24px;
+    padding: 24px;
   } 
   .user-avatars img {
   width: 52px;
@@ -350,83 +439,10 @@ p {
 }
   .hero-cta{
     display: flex; 
-    align-items: stretch; 
-    justify-content: flex-end;
-    width:100%; 
+    justify-content: flex-end; 
   }
   .hero-btn{
-    width:100%; 
+    padding: 16px 75px; 
+    max-width: 341px; 
   }
-}
-
-@media (min-width:1401px){ 
-  .hero-section{
-    width:100%; 
-    height:100vh; 
-    min-height: 100vh;
-  } 
-  .hero-container{ 
-    width:calc(100% - 200px); 
-    margin:0 auto; 
-    padding-top:200px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between;
-  } 
-  .hero-top-row{
-    width:100%; 
-    height: auto; 
-  }
-  .hero-text-block{
-    width:80%; 
-  } 
-  .hero-text-block p{
-    width:80%;
-  } 
-  .floating-badges{
-    position: absolute;  
-    top:470px; 
-    right:100px;  
-    width:30%; 
-  } 
-  .badge span.text{
-    height:44px; 
-    width:100%;
-  }
-  .badge span.icon{
-    width:44px; 
-    height:44px;
-  } 
-  .badge span.icon svg{
-    width:24px; 
-    height:24px;
-  }
-  .hero-bottom-row{ 
-    width:100%; 
-    margin:0 auto;
-    display: grid; 
-    grid-template-columns: 50% 35%; 
-    flex-direction: row;
-    justify-content: space-between; 
-    align-items: flex-end; 
-  } 
-  .hero-mini-card{
-    display: flex; 
-    flex-direction: row; 
-    gap:24px; 
-    padding:28px 28px;  
-  } 
-  .user-avatars img {
-  width: 60px;
-  height: 60px;
-}
-  .hero-cta{
-    display: flex; 
-    align-items: stretch; 
-    justify-content: flex-end;
-    width:100%; 
-  }
-  .hero-btn{
-    width:100%; 
-  }
-}
+} 
