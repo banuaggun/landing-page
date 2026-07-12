@@ -68,6 +68,17 @@ p {
   padding-top: 40px;
 } 
 
+@media (min-width:300px) and (max-width:350px){ 
+  .hero-section{
+    min-height:180vh; 
+     background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+}
+
+
+
 .hero-text-block{
     display:flex;  
     flex-direction: column; 
@@ -274,8 +285,8 @@ p {
 @media (min-width:700px){ 
   .hero-section{
     width:100%; 
-    min-height:800px;  
-    height:800px;
+    min-height:840px;  
+    height:840px;
   } 
   .hero-container{ 
     width:calc(100% - 128px); 

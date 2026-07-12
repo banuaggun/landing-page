@@ -1,0 +1,229 @@
+.features-wrapper {
+  width: calc(100% - 48px);
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.features-content {
+  width: 100%;
+  padding: 0 4px;
+}
+
+.f-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.features-container {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  /* padding: 1.25em;*/
+  padding: 40px 12px 0 12px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 12px 0 12px;
+}
+
+.card-svg {
+  color: var(--white);
+  opacity: 0.2;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.card__title {
+  white-space: nowrap;
+}
+
+.card:nth-child(2) {
+  background-color: rgba(245, 181, 255, 0.4);
+}
+
+.card:nth-child(1),
+.card:nth-child(3) {
+  background-color: rgba(112, 176, 250, 0.4);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .card__title {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  .features-wrapper {
+    width: calc(100% - 128px);
+    margin: 80px auto;
+  }
+  .features-container {
+    max-height: 670px;
+    min-height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 24px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .card {
+    max-width: none;
+    isolation: isolate;
+    height: 320px;
+  }
+
+  .card:nth-child(1) {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(3) {
+    width: calc(50% - 12px);
+    aspect-ratio: auto;
+  }
+  .card__title {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1400px) {
+  .features-container {
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0;
+  }
+
+  .card {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    isolation: isolate;
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .card:nth-child(1) > .card__content {
+    padding: 50px 60px 0 60px;
+  }
+  .card:nth-child(2) > .card__content,
+  .card:nth-child(3) > .card__content {
+    padding: 20px 40px 0 40px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .features-wrapper {
+    width: calc(100% - 160px);
+    margin: 80px auto;
+  }
+  .f-text-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 2600px) {
+  .features-wrapper {
+    width: calc(100% - 200px);
+    margin: 80px auto;
+  }
+  .f-text-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .features-container {
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0;
+  }
+
+  .card {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    isolation: isolate;
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .card:nth-child(1) > .card__content {
+    padding: 50px 60px 0 60px;
+  }
+  .card:nth-child(2) > .card__content,
+  .card:nth-child(3) > .card__content {
+    padding: 20px 40px 0 40px;
+  }
+}
