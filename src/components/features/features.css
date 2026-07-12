@@ -1,6 +1,6 @@
 .features-wrapper {
   width: calc(100% - 48px);
-  margin: 60px auto;
+  margin: 60px auto 20px auto;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -24,7 +24,7 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  padding: 20px;
+  padding: 0px;
 }
 
 .card {
@@ -35,7 +35,7 @@
   justify-content: space-between;
   overflow: hidden;
   /* padding: 1.25em;*/
-  padding: 40px 12px 0 12px;
+  padding: 40px 0px 0 0px;
   width: 100%;
   max-width: 400px;
   position: relative;
@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 12px 0 12px;
+  padding: 0px 12px 0 12px;
 }
 
 .card-svg {
@@ -80,6 +80,9 @@
     flex-direction: column;
     gap: 30px;
   }
+  .card {
+    padding: 40px 12px 0 12px;
+  }
   .card__title {
     white-space: normal;
   }
@@ -110,15 +113,24 @@
   .card:nth-child(1) {
     width: 100%;
     aspect-ratio: auto;
+    padding: 40px 80px 0 20px;
   }
 
   .card:nth-child(2),
   .card:nth-child(3) {
     width: calc(50% - 12px);
     aspect-ratio: auto;
+    padding: 40px 20px 0 20px;
   }
   .card__title {
     white-space: normal;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .features-wrapper {
+    width: calc(100% - 128px);
+    margin: 80px auto;
   }
 }
 
@@ -159,7 +171,7 @@
   }
   .card:nth-child(2) > .card__content,
   .card:nth-child(3) > .card__content {
-    padding: 20px 40px 0 40px;
+    padding: 20px 40px 40px 40px;
   }
 }
 
@@ -224,6 +236,6 @@
   }
   .card:nth-child(2) > .card__content,
   .card:nth-child(3) > .card__content {
-    padding: 20px 40px 0 40px;
+    padding: 20px 40px 80px 40px;
   }
 }

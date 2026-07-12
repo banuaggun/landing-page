@@ -51,8 +51,7 @@ function Features() {
             </h2>
             <p className="card__description features-body">
               We protect diverse species and maintain ecosystem balance to
-              ensure resilient forests. Healthy ecosystems also support local
-              communities and future generations.
+              ensure resilient forests. 
             </p>
           </div>
         </div>
