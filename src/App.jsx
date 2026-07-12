@@ -4,6 +4,8 @@ import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import Products from "./components/products/Products";
 import Features from "./components/features/Features";
+import Metrics from "./components/metrics/Metrics";
+import Reinforce from "./components/reinforce/Reinforce";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <main>
         <section id="home" className="content">
           <Hero />
-          <Features />
+          <Features /> 
+          <Metrics /> 
+          <Reinforce/>
         </section>
 
         <section id="products">

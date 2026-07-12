@@ -1,0 +1,166 @@
+.reinforce-section {
+  margin: 0px auto 60px auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/bg.png") no-repeat center center/cover;
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+/* Sadece görsele %80 opaklık veren yeni katman */
+.reinforce-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../assets/bg.png") no-repeat center center/cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.reinforce-image-side {
+  display: none;
+}
+
+/* Transparan ve buzlu cam efektli kart */
+.reinforce-card {
+  width: 100%;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.reinforce-btn {
+  width: 270px;
+  height: 60px;
+  text-align: center;
+  background-color: #0b3511;
+  border: none;
+  border-radius: 20px;
+  /* padding: 16px 50px;*/
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.reinforce-btn:hover {
+  background-color: #0f341c;
+  cursor: pointer;
+}
+
+.reinforce-btn:active {
+  transform: scale(0.98);
+  cursor: pointer;
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  .reinforce-section {
+    border: 1px solid red;
+    padding: 40px 64px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .reinforce-section {
+    background: #fdfbf9 !important;
+    background-image: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 60px;
+    height: auto;
+    padding: 0 80px 0 0 !important;
+  }
+
+  .reinforce-section::before {
+    display: none !important;
+  }
+
+  .reinforce-image-side {
+    width: 50%;
+    height: auto;
+    display: flex !important;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reinforce-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  .reinforce-image-side::before {
+    display: none;
+  }
+
+  .reinforce-card {
+    width: 50%;
+    background: transparent;
+    padding: 120px 0;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 2600px) {
+  .reinforce-section {
+    background: #fdfbf9 !important;
+    background-image: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 60px;
+    height: auto;
+    padding: 0 100px 0 0 !important;
+  }
+
+  .reinforce-section::before {
+    display: none !important;
+  }
+
+  .reinforce-image-side {
+    width: 50%;
+    height: auto;
+    display: flex !important;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reinforce-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  .reinforce-image-side::before {
+    display: none;
+  }
+
+  .reinforce-card {
+    width: 50%;
+    background: transparent;
+    padding: 120px 0;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+  }
+}

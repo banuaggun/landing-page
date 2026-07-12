@@ -1,0 +1,75 @@
+.reinforce-title{
+    letter-spacing: 0.4px; 
+    font-weight:700; 
+    font-family: var(--font-family-2); 
+    color:var(--header-color);
+} 
+
+.reinforce-text{
+    letter-spacing: 0.4px; 
+    font-weight:500; 
+    font-family: var(--font-family-2); 
+    color:var(--text-color);
+} 
+
+.reinforce-btn{
+    letter-spacing: 0.4px; 
+    font-weight: 600; 
+    color:var(--white);
+} 
+
+@media (max-width:480px){ 
+    .reinforce-title{
+        font-size: 40px; 
+        line-height: 60px;
+    }
+    .reinforce-text, .reinforce-btn{
+        font-size: 18px; 
+        line-height: 30px;
+    }
+} 
+
+@media (min-width:481px) and (max-width:1300px){
+    .reinforce-title{
+        font-size: 40px; 
+        line-height: 60px;
+    } 
+    .reinforce-text{
+        font-size: 20px; 
+        line-height: 32px;
+    } 
+    .reinforce-btn{
+        font-size: 18px; 
+        line-height: 30px;
+    }
+} 
+
+@media (min-width:1301px) and (max-width:1400px){
+    .reinforce-title{
+        font-size: 48px; 
+        line-height: 72px;
+    } 
+    .reinforce-text{
+        font-size: 20px; 
+        line-height: 32px;
+    } 
+    .reinforce-btn{
+        font-size: 18px; 
+        line-height: 30px;
+    }
+} 
+
+@media (min-width:1401px) and (max-width:2600px){
+    .reinforce-title{
+        font-size: 48px; 
+        line-height: 72px;
+    } 
+    .reinforce-text{
+        font-size: 25px; 
+        line-height: 35px;
+    } 
+    .reinforce-btn{
+        font-size: 18px; 
+        line-height: 30px;
+    }
+}
