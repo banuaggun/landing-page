@@ -9,10 +9,8 @@
   padding: 40px 24px;
   position: relative;
   overflow: hidden;
-  border: 1px solid black;
 }
 
-/* Sadece görsele %80 opaklık veren yeni katman */
 .reinforce-section::before {
   content: "";
   position: absolute;
@@ -29,7 +27,6 @@
   display: none;
 }
 
-/* Transparan ve buzlu cam efektli kart */
 .reinforce-card {
   width: 100%;
   z-index: 2;
@@ -46,29 +43,34 @@
   width: 270px;
   height: 60px;
   text-align: center;
-  background-color: #0b3511;
-  border: none;
+  background-color: var(--primary-green);
+  border: 2px solid var(--btn-border-color);
+  box-shadow: 0 4px 20px rgba(24, 72, 35, 0.6);
   border-radius: 20px;
-  /* padding: 16px 50px;*/
-  cursor: pointer;
   transition:
     background-color 0.2s ease,
     transform 0.1s ease;
 }
 
 .reinforce-btn:hover {
-  background-color: #0f341c;
+  background-color: #1f5c2d;
+  border: 2px solid #a3f0b0;
+  box-shadow: 0 0 15px rgba(163, 240, 176, 0.4);
   cursor: pointer;
 }
 
-.reinforce-btn:active {
+.reinforce-btn.active,
+.reinforce-btn:focus {
   transform: scale(0.98);
+  background-color: #0b3511;
+  border: 2px solid var(--btn-border-color);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  outline: none;
   cursor: pointer;
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
   .reinforce-section {
-    border: 1px solid red;
     padding: 40px 64px;
   }
 }

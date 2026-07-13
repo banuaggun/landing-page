@@ -15,7 +15,8 @@
 .reinforce-btn{
     letter-spacing: 0.4px; 
     font-weight: 600; 
-    color:var(--white);
+    color:var(--white); 
+    font-family: var(--font-family-2);
 } 
 
 @media (max-width:480px){ 
