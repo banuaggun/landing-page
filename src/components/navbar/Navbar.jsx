@@ -109,7 +109,7 @@ const Navbar = () => {
             href="#home"
             className="logo"
             onClick={() => handleLinkClick("home")}>
-            <img src={isMobile ? logoMobile : logoWeb} alt="logo" />
+            <img src={isMobile ? logoMobile : logoWeb} alt="Tree Foundation" />
           </a>
 
           {/* Masaüstü Web Menüsü */}

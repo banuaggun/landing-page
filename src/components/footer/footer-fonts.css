@@ -1,0 +1,24 @@
+.group-title{
+    letter-spacing: 0.4px; 
+    line-height: 500; 
+    color:var(--header-color); 
+    font-family: var(--font-family-2);
+} 
+
+.group-link{
+    letter-spacing: 0.4px; 
+    line-height: 700; 
+    color:var(--text-color); 
+    font-family: var(--font-family-2);
+}
+
+@media (max-width:480px){
+    .group-title{
+        font-size: 18px; 
+        line-height: 30px;
+    } 
+    .group-link{
+        font-size:20px; 
+        line-height: 30px;
+    }
+}

@@ -6,6 +6,7 @@ import Products from "./components/products/Products";
 import Features from "./components/features/Features";
 import Metrics from "./components/metrics/Metrics";
 import Reinforce from "./components/reinforce/Reinforce";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         <section id="products">
           <Products />
         </section>
-      </main>
+      </main> 
+      <Footer/>
     </>
   );
 }
