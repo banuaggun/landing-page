@@ -4,10 +4,9 @@ import logoWeb from "../../assets/logos/logo-web.svg";
 import "./navbar.css";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
   const [activeLink, setActiveLink] = useState("home");
-
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const navbarRef = useRef(null);
@@ -18,21 +17,10 @@ const Navbar = () => {
     setDropdownOpen(false);
   };
 
-  const toggleDropdown = (e) => {
-    e.preventDefault();
-    setDropdownOpen(!dropdownOpen);
-  };
-
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -42,10 +30,8 @@ const Navbar = () => {
         setDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchstart", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
@@ -95,9 +81,7 @@ const Navbar = () => {
     });
 
     return () => {
-      observers.forEach(({ observer, element }) => {
-        observer.unobserve(element);
-      });
+      observers.forEach(({ observer, element }) => observer.unobserve(element));
     };
   }, []);
 
@@ -112,7 +96,6 @@ const Navbar = () => {
             <img src={isMobile ? logoMobile : logoWeb} alt="Tree Foundation" />
           </a>
 
-          {/* Masaüstü Web Menüsü */}
           <div className="desktop-menu-links">
             <a
               href="#home"
@@ -127,11 +110,24 @@ const Navbar = () => {
               About Us
             </a>
 
-            <div className="desktop-dropdown-wrapper">
+            <div
+              className={`desktop-dropdown-wrapper ${dropdownOpen ? "show" : ""}`}
+              onMouseEnter={() => !isMobile && setDropdownOpen(true)}
+              onMouseLeave={() => !isMobile && setDropdownOpen(false)}>
               <a
                 href="#programs"
                 className={`dropdown-trigger ${activeLink === "programs" ? "active" : ""}`}>
-                Programs <span className="arrow">▼</span>
+                Programs{" "}
+                <span className={`arrow ${dropdownOpen ? "rotate" : ""}`}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="var(--text-color)"
+                    viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,48,88H208a8,8,0,0,1,5.66,13.66Z"></path>
+                  </svg>
+                </span>
               </a>
               <div className="desktop-dropdown-menu">
                 <a
@@ -189,7 +185,7 @@ const Navbar = () => {
             </a>
             <a
               href="#about"
-              className={activeLink === "about" ? "active" : ""}
+              className={activeLink === "about" ? "about" : ""}
               onClick={() => handleLinkClick("about")}>
               About Us
             </a>
@@ -198,10 +194,20 @@ const Navbar = () => {
               <a
                 href="#programs"
                 className="mobile-dropdown-trigger"
-                onClick={toggleDropdown}>
+                onClick={(e) => {
+                  e.preventDefault();
+                  setDropdownOpen(!dropdownOpen);
+                }}>
                 Programs{" "}
                 <span className={`arrow ${dropdownOpen ? "rotate" : ""}`}>
-                  ▼
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="var(--text-color)"
+                    viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,48,88H208a8,8,0,0,1,5.66,13.66Z"></path>
+                  </svg>
                 </span>
               </a>
               <div

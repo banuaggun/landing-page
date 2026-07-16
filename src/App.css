@@ -6,7 +6,6 @@ body {
   background: #f9fafc;
   margin: 0;
   padding: 0;
-  color: #222; 
   box-sizing: border-box; 
   width: 100%;
   scroll-behavior: smooth; 
@@ -18,7 +17,8 @@ section {
 }
 
 #home {
-  padding:0px 0 0 0;  
+  margin:0; 
+  padding: 0;
 }
 
 #products {
@@ -27,17 +27,4 @@ section {
 
 #solutions {
   background-color: #f4f6f9; 
-}
-
-@media (max-width:768px){
-  #home{
-    padding-top: 0px; 
-    border:1px solid red;
-  }
-} 
-
-@media (min-width:769px){
-  #home{
-    padding-top:0px;
-  }
 }
