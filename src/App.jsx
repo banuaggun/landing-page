@@ -9,6 +9,7 @@ import Reinforce from "./components/reinforce/Reinforce";
 import Footer from "./components/footer/Footer";
 import Fieldwork from "./components/fieldwork/Fieldwork";
 import Highlights from "./components/highlights/Highlights";
+import Support from "./components/support/Support";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Fieldwork /> 
           <Highlights />
           <Metrics /> 
+          <Support />
           <Reinforce/>
         </section>
 
