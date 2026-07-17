@@ -1,0 +1,67 @@
+.fieldwork-main-title, .fieldwork-item-title{
+    font-weight:700; 
+    font-family: var(--font-family-2);
+    letter-spacing: 0.4px; 
+    color:var(--header-color);
+} 
+
+@media (max-width:480px){
+    .fieldwork-main-title{
+        font-size:25px; 
+        line-height: 38px;
+    } 
+    .fieldwork-item-title{
+        font-size: 20px; 
+        line-height: 30px;
+    } 
+    .fieldwork-item-text{
+        font-size: 18px; 
+        line-height:30px;
+    }
+} 
+
+@media (min-width:481px) and (max-width:1200px){
+    .fieldwork-main-title{
+        font-size: 30px; 
+        line-height: 45px;
+    } 
+    .fieldwork-item-title{
+        font-size: 25px; 
+        line-height: 38px;
+    } 
+    .fieldwork-item-text{
+        font-size: 18px; 
+        line-height:30px;
+    }
+} 
+
+@media (min-width:1201px){
+    .fieldwork-main-title{
+        font-size: 40px; 
+        line-height:60px; 
+    }
+    .fieldwork-item-title{
+        font-size: 30px; 
+        line-height: 45px;
+    }
+    .fieldwork-item-text{
+        font-size: 20px; 
+        line-height: 32px;
+    }
+} 
+
+@media (min-width:1401px){
+    .fieldwork-main-title{
+        font-size: 40px; 
+        line-height:60px; 
+    }
+    .fieldwork-item-title{
+        font-size: 30px; 
+        line-height: 45px;
+    }
+    .fieldwork-item-text{
+        font-size: 22px; 
+        line-height: 35px;
+    }
+}
+

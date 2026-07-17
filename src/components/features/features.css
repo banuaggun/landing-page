@@ -34,7 +34,6 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  /* padding: 1.25em;*/
   padding: 40px 0px 0 0px;
   width: 100%;
   max-width: 400px;
@@ -78,9 +77,10 @@
   .features-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 30px; 
+    min-height:auto;
   }
-  .card {
+  .card { 
     padding: 40px 12px 0 12px;
   }
   .card__title {
