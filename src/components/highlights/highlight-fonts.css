@@ -1,0 +1,44 @@
+.highlights-main-title,
+.highlights-item-title {
+  font-family: var(--font-family-2);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--header-color);
+}
+
+.highlights-item-text,
+.testimonial-text {
+  color: var(--text-color);
+}
+
+@media (max-width: 480px) and (max-width: 1200px) {
+  .highlights-main-title {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .highlights-item-title {
+    font-size: 25px;
+    line-height: 38px;
+  }
+  .highlights-item-text,
+  .testimonial-text {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .highlights-main-title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .highlights-item-title {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .highlights-item-text,
+  .testimonial-text {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}

@@ -8,6 +8,7 @@ import Metrics from "./components/metrics/Metrics";
 import Reinforce from "./components/reinforce/Reinforce";
 import Footer from "./components/footer/Footer";
 import Fieldwork from "./components/fieldwork/Fieldwork";
+import Highlights from "./components/highlights/Highlights";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <section id="home" className="content">
           <Hero />
           <Features /> 
-          <Fieldwork />
+          <Fieldwork /> 
+          <Highlights />
           <Metrics /> 
           <Reinforce/>
         </section>
