@@ -26,21 +26,15 @@ export default function Hero() {
           <div className="floating-badges fonts-body">
             <div className="badge badge-1">
               <span className="text">Biodiverse Ecosystems</span>
-              <span className="icon">
-                <DiamondIcon />
-              </span>
+              <span className="icon"><DiamondIcon /></span>
             </div>
             <div className="badge badge-2">
-              <span className="icon">
-                <DiamondIcon />
-              </span>
+              <span className="icon"><DiamondIcon /></span>
               <span className="text">Carbon Offset Potential</span>
             </div>
             <div className="badge badge-3">
               <span className="text">24/7 Forest Monitoring</span>
-              <span className="icon">
-                <DiamondIcon />
-              </span>
+              <span className="icon"><DiamondIcon /></span>
             </div>
           </div>
         </div>
@@ -63,6 +57,7 @@ export default function Hero() {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );
