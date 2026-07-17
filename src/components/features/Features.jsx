@@ -1,6 +1,7 @@
 import React from "react";
 import "./features.css";
 import "./features-fonts.css";
+import TitleBadge from "../common/TitleBadge";
 
 function Features() {
   return (
@@ -16,7 +17,9 @@ function Features() {
             planet.
           </p>
         </div>
-      </div>
+      </div> 
+
+      <TitleBadge>Green Solutions</TitleBadge>
 
       <div className="features-container">
         <div className="card">

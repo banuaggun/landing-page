@@ -84,4 +84,31 @@ p {
 .fonts-p1{
   font-size:24px; 
   line-height: 38px;
+} 
+
+.title-badge{
+  width:max-content;
+  padding:12px 24px; 
+  border-radius: 40px; 
+  background-color: rgba(135, 234, 150, 0.4); 
+  color:#184823; 
+  text-transform: uppercase; 
+  font-family: var(--font-family-2); 
+  letter-spacing:5%; 
+  font-weight:700; 
+  white-space: nowrap;
+}
+
+@media (min-width:300px) and (max-width:770px){
+  .title-badge{
+    font-size: 20px; 
+    line-height: 30px;
+  }
+}
+
+@media (min-width:771px){
+  .title-badge{
+    font-size: 25px; 
+    line-height: 38px;
+  }
 }
