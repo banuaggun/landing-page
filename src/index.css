@@ -33,6 +33,12 @@ p {
   letter-spacing: 0.4px;
   font-weight: 700;
   font-family: var(--font-family-1);
+} 
+
+.fonts-header-sub {
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  font-family: var(--font-family-2);
 }
 
 .fonts-h6 {
@@ -118,7 +124,7 @@ p {
 
 @media (min-width: 771px) {
   .title-badge {
-    font-size: 25px;
-    line-height: 38px;
+    font-size: 22px;
+    line-height: 35px;
   }
 }
