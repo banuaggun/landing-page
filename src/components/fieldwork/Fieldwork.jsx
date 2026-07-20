@@ -16,9 +16,8 @@ const Fieldwork = () => {
       <div className="fieldwork-container">
         <div className="fieldwork-header-block">
           <TitleBadge>OUR FIELDWORK</TitleBadge>
-          <h2 className="fieldwork-main-title">
-            We work on the ground to restore nature and secure a sustainable
-            future
+          <h2 className="fieldwork-main-title fonts-header-sub">
+            We work on the ground to restore nature and secure a sustainable future
           </h2>
         </div>
 
@@ -29,12 +28,11 @@ const Fieldwork = () => {
             </div>
 
             <div className="fieldwork-item-content">
-              <h3 className="fieldwork-item-title fonts-header">
+              <h3 className="fieldwork-item-title fonts-header-sub">
                 Seedling Planting
               </h3>
               <p className="fieldwork-item-text fonts-body">
-                Carefully selecting native tree species to rebuild damaged
-                forest soils and support local wildlife ecosystems.
+                Carefully selecting native tree species to rebuild damaged forest soils and support local wildlife ecosystems.
               </p>
             </div>
           </div>
@@ -47,12 +45,11 @@ const Fieldwork = () => {
               </div>
             </div>
             <div className="fieldwork-item-content">
-              <h3 className="fieldwork-item-title fonts-header">
+              <h3 className="fieldwork-item-title fonts-header-sub">
                 Wildfire Prevention
               </h3>
               <p className="fieldwork-item-text fonts-body">
-                Creating smart firebreaks and using satellite tech to detect
-                risks early and protect existing green zones.
+                Creating smart firebreaks and using satellite tech to detect risks early and protect existing green zones.
               </p>
             </div>
           </div>
@@ -62,12 +59,11 @@ const Fieldwork = () => {
               <FieldworkIcon />
             </div>
             <div className="fieldwork-item-content">
-              <h3 className="fieldwork-item-title fonts-header">
+              <h3 className="fieldwork-item-title fonts-header-sub">
                 Soil Regeneration
               </h3>
               <p className="fieldwork-item-text fonts-body">
-                Restoring nutrients to depleted lands to ensure the newly
-                planted trees can grow healthy for decades.
+                Restoring nutrients to depleted lands to ensure the newly planted trees can grow healthy for decades.
               </p>
             </div>
           </div>

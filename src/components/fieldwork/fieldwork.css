@@ -2,11 +2,10 @@
   width: calc(100% - 48px);
   margin: 0 auto;
   background-color: var(--white);
-  padding: 60px 0px 60px 0;
+  padding: 60px 0px 80px 0;
   display: flex;
   justify-content: center;
   gap: 40px;
-  box-sizing: border-box;
 }
 
 .fieldwork-container {
@@ -22,10 +21,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
-}
-
-.fieldwork-main-title {
-  margin: 0;
 }
 
 .fieldwork-items-list {
@@ -90,12 +85,11 @@
 }
 
 .fieldwork-item-title {
-  margin: 0;
+  color:var(--header-color);
 }
 
 .fieldwork-item-text {
   color: var(--text-color);
-  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -108,9 +102,6 @@
   .fieldwork-container {
     width: 100%;
     max-width: 100%;
-  }
-  .fieldwork-main-title {
-    font-size: 36px;
   }
   .fieldwork-items-list {
     padding: 0 36px;
