@@ -23,6 +23,9 @@ export default function Hero() {
             </p>
           </div>
 
+        </div> 
+
+        <div className="hero-second-row">
           <div className="floating-badges fonts-body">
             <div className="badge badge-1">
               <span className="text">Biodiverse Ecosystems</span>

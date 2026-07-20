@@ -1,5 +1,97 @@
-/* Large Desktop (1600–1899px) */
-@media (max-width: 2600px) {
+.card-text {
+  color: var(--white);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 38px;
+    line-height: 50px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 30px;
+  } 
+  .badge span.text, .card-text{
+    font-size: 16px; 
+    line-height: 26px;
+  } 
+  .hero-btn span{
+    font-size: 18px; 
+    line-height: 30px; 
+    font-weight: 700;
+  }
+} 
+
+@media (min-width:481px) and (max-width: 1000px) {
+  .hero-title {
+    font-size: 50px;
+    line-height: 65px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 32px;
+  } 
+  .badge span.text, .card-text{
+    font-size: 18px; 
+    line-height: 30px;
+  }
+  .hero-btn span{
+    font-size: 18px; 
+    line-height: 30px; 
+    font-weight: 700;
+  }
+} 
+
+@media (min-width:1001px) and (max-width: 1400px) {
+  .hero-title {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 32px; 
+  } 
+  .badge span.text{
+    font-size: 18px; 
+    line-height: 30px;
+  }
+  .card-text{
+    font-size: 18px; 
+    line-height: 30px;
+  } 
+  .hero-btn span{
+    font-size: 18px; 
+    line-height: 30px; 
+    font-weight: 700;
+  }
+} 
+
+@media (min-width: 1401px) and (max-width:2599px){
+  .hero-title {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+    line-height: 38px;
+  } 
+  .badge span.text{
+    font-size: 20px; 
+    line-height: 32px;
+  }
+  .card-text{
+    font-size: 20px; 
+    line-height: 32px;
+  } 
+  .hero-btn span{
+    font-size: 20px; 
+    line-height: 32px; 
+    font-weight: 700;
+  }
+} 
+ 
+@media (min-width:2600px) {
   .hero-title {
     font-size: 90px;
     line-height: 100px;
@@ -22,103 +114,3 @@
     font-weight: 700;
   }
 } 
-
-/* Medium Desktop (1368–1400px) */
-@media (max-width: 1400px) {
-  .hero-title {
-    font-size: 70px;
-    line-height: 80px;
-  }
-  .hero-subtitle {
-    font-size: 24px;
-    line-height: 38px;
-  } 
-  .badge span.text{
-    font-size: 18px; 
-    line-height: 30px;
-  }
-  .card-text{
-    font-size: 18px; 
-    line-height: 30px;
-  } 
-  .hero-btn span{
-    font-size: 18px; 
-    line-height: 30px; 
-    font-weight: 700;
-  }
-} 
-
-@media (max-width:1300px){
-  .card-text{
-    font-size: 18px; 
-    line-height: 30px;
-  } 
-  .hero-btn span{
-    font-size: 18px; 
-    line-height: 30px; 
-    font-weight: 700;
-  } 
-  .badge span.text{
-    font-size: 18px; 
-    line-height: 30px;
-  } 
-  .card-text{
-    font-size: 18px; 
-    line-height: 30px;
-  } 
-   .hero-btn span{
-    font-size: 18px; 
-    line-height: 30px; 
-    font-weight: 700;
-  }
-}
- 
-/* Small Tablet (768–1000px) */
-@media (max-width: 1000px) {
-  .hero-title {
-    font-size: 50px;
-    line-height: 65px;
-  }
-  .hero-subtitle {
-    font-size: 18px;
-    line-height: 30px;
-  } 
-  .badge span.text{
-    font-size: 16px; 
-    line-height: 26px;
-  }
-  .card-text{
-    font-size: 18px; 
-    line-height: 30px;
-  } 
-  .hero-btn span{
-    font-size: 18px; 
-    line-height: 30px; 
-    font-weight: 700;
-  }
-}
-
-/* Mobile (≤480px) */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 38px;
-    line-height: 50px;
-  }
-  .hero-subtitle {
-    font-size: 18px;
-    line-height: 30px;
-  } 
-  .badge span.text{
-    font-size: 16px; 
-    line-height: 26px;
-  }
-  .card-text{
-    font-size: 16px;
-    line-height: 26px; 
-  } 
-  .hero-btn span{
-    font-size: 18px; 
-    line-height: 30px; 
-    font-weight: 700;
-  }
-}

@@ -1,12 +1,22 @@
-:root{
-  --font-family-1:"EB Garamond", serif;
-  --font-family-2:"Manrope", sans-serif;  
-  --white:#ffffff;
-  --header-color:#000000;
-  --text-color:#212121; 
-  --primary-green: #184823; 
-  --btn-border-color:#87EA96;
-} 
+:root {
+  --font-family-1: "EB Garamond", serif;
+  --font-family-2: "Manrope", sans-serif;
+
+  --white: #ffffff;
+  --header-color: #000000;
+  --text-color: #212121;
+
+  --primary-green: #184823;
+  --primary-green-hover: #1f5c2d;
+  --primary-green-active: #0b3511;
+
+  --btn-border-color: #87ea96;
+  --btn-border-hover: #a3f0b0;
+
+  --shadow-btn-default: 0 4px 20px rgba(24, 72, 35, 0.6);
+  --shadow-btn-hover: 0 0 15px rgba(163, 240, 176, 0.4);
+  --shadow-btn-active: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
 
 h1,
 h2,
@@ -19,96 +29,96 @@ p {
   padding: 0;
 }
 
-.fonts-header{
-  letter-spacing:0.4px; 
-  font-weight:700; 
+.fonts-header {
+  letter-spacing: 0.4px;
+  font-weight: 700;
   font-family: var(--font-family-1);
 }
 
-.fonts-h6{
-  font-size:24px; 
-  line-height: 32px; 
-} 
-
-.fonts-h5{
-  font-size:28px; 
-  line-height: 36px; 
-} 
-
-.fonts-h4{
-  font-size:38px; 
-  line-height: 50px; 
-} 
-
-.fonts-h3{
-  font-size:50px; 
-  line-height: 65px; 
-} 
-
-.fonts-h2{
-  font-size:70px; 
-  line-height: 80px; 
-} 
-
-.fonts-h1{
-  font-size:90px; 
-  line-height: 100px; 
+.fonts-h6 {
+  font-size: 24px;
+  line-height: 32px;
 }
 
-.fonts-body{
-  letter-spacing: 0.4px; 
-  font-weight: 500; 
+.fonts-h5 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.fonts-h4 {
+  font-size: 38px;
+  line-height: 50px;
+}
+
+.fonts-h3 {
+  font-size: 50px;
+  line-height: 65px;
+}
+
+.fonts-h2 {
+  font-size: 70px;
+  line-height: 80px;
+}
+
+.fonts-h1 {
+  font-size: 90px;
+  line-height: 100px;
+}
+
+.fonts-body {
+  letter-spacing: 0.4px;
+  font-weight: 500;
   font-family: var(--font-family-2);
-}  
+}
 
-.fonts-p5{
-  font-size:16px; 
+.fonts-p5 {
+  font-size: 16px;
   line-height: 26px;
-} 
+}
 
-.fonts-p4{
-  font-size:18px; 
+.fonts-p4 {
+  font-size: 18px;
   line-height: 30px;
-} 
+}
 
-.fonts-p3{
-  font-size:20px; 
+.fonts-p3 {
+  font-size: 20px;
   line-height: 32px;
-} 
+}
 
-.fonts-p2{
-  font-size:22px; 
+.fonts-p2 {
+  font-size: 22px;
   line-height: 35px;
-} 
+}
 
-.fonts-p1{
-  font-size:24px; 
+.fonts-p1 {
+  font-size: 24px;
   line-height: 38px;
-} 
+}
 
-.title-badge{
-  width:max-content;
-  padding:12px 24px; 
-  border-radius: 40px; 
-  background-color: rgba(135, 234, 150, 0.4); 
-  color:#184823; 
-  text-transform: uppercase; 
-  font-family: var(--font-family-2); 
-  letter-spacing:5%; 
-  font-weight:700; 
+.title-badge {
+  width: max-content;
+  padding: 12px 24px;
+  border-radius: 40px;
+  background-color: rgba(135, 234, 150, 0.4);
+  color: var(--primary-green);
+  text-transform: uppercase;
+  font-family: var(--font-family-2);
+  letter-spacing: 5%;
+  font-weight: 700;
   white-space: nowrap;
 }
 
-@media (min-width:300px) and (max-width:770px){
-  .title-badge{
-    font-size: 20px; 
+@media (min-width: 300px) and (max-width: 770px) {
+  .title-badge {
+    font-size: 20px;
     line-height: 30px;
   }
 }
 
-@media (min-width:771px){
-  .title-badge{
-    font-size: 25px; 
+@media (min-width: 771px) {
+  .title-badge {
+    font-size: 25px;
     line-height: 38px;
   }
 }
