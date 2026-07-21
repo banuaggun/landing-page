@@ -13,19 +13,19 @@ const Metrics = () => {
     <section className="metrics-area">
       <div className="metrics-container">
         <div className="metrics-header-area">
-          <h2 className="m-header">Our Metrics Tell the Story</h2>
-          <p className="m-text m-body">
-            We measure our success not just in data, but in the thriving
-            ecosystems we rebuild together. These live metrics showcase the
-            ongoing progress of our global reforestation mission.
+          <h2 className="m-header fonts-header-sub">
+            Our Metrics Tell the Story
+          </h2>
+          <p className="m-text fonts-body">
+            We measure our success not just in data, but in the thriving ecosystems we rebuild together. These live metrics showcase the ongoing progress of our global reforestation mission.
           </p>
         </div>
 
         <div className="metrics-grid">
           {metricsData.map((item) => (
             <div key={item.id} className="metric-card">
-              <h3 className="metric-value m-head">{item.value}</h3>
-              <p className="metric-label m-body">{item.label}</p>
+              <h3 className="metric-value m-head fonts-header">{item.value}</h3>
+              <p className="metric-label fonts-body">{item.label}</p>
             </div>
           ))}
         </div>

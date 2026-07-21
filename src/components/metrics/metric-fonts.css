@@ -1,27 +1,15 @@
-.m-header {
-  letter-spacing: 0.4px;
-  font-weight: 700;
-  font-family: var(--font-family-2);
-  color: var(--header-color);
-}
-.m-head {
-  letter-spacing: 0.4px;
-  font-weight: 700;
-  font-family: var(--font-family-1);
+.m-header, .m-head {
   color: var(--header-color);
 }
 
 .m-body {
-  letter-spacing: 0.4px;
-  font-weight: 500;
-  font-family: var(--font-family-2);
   color: var(--text-color);
 }
 
 @media (max-width: 480px) {
   .m-header {
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 25px;
+    line-height: 38px;
   }
   .m-text {
     font-size: 18px;
@@ -32,19 +20,19 @@
     line-height: 36px;
   }
   .metric-label {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 30px;
   }
 }
 
-@media (min-width: 481px) and (max-width: 1400px) {
+@media (min-width: 481px) and (max-width: 1200px) {
   .m-header {
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 30px;
+    line-height: 45px;
   }
   .m-text {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 30px;
   }
   .metric-value {
     font-size: 38px;
@@ -54,16 +42,16 @@
     font-size: 18px;
     line-height: 30px;
   }
-}
+} 
 
-@media (min-width: 1401px) {
-  .m-header {
-    font-size: 48px;
-    line-height: 72px;
+@media (min-width:1201px) and (max-width:1400px){
+   .m-header {
+    font-size: 30px;
+    line-height: 45px;
   }
   .m-text {
-    font-size: 22px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 32px;
   }
   .metric-value {
     font-size: 50px;
@@ -72,5 +60,24 @@
   .metric-label {
     font-size: 20px;
     line-height: 32px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .m-header {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .m-text {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .metric-value {
+    font-size: 50px;
+    line-height: 65px;
+  }
+  .metric-label {
+    font-size: 24px;
+    line-height: 38px;
   }
 }
