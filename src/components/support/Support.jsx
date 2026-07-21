@@ -40,18 +40,23 @@ const Support = () => {
     <section className="support-section">
       <div className="support-container">
         <div className="support-header-block">
-          <h2 className="support-main-title">Our Frequently Asked Questions</h2>
+          <h2 className="support-main-title fonts-header-sub">
+            Our Frequently Asked Questions
+          </h2>
           <p className="support-text fonts-body">
-            Quick answers to help you understand our reforestation and tracking
-            ecosystem.
+            Quick answers to help you understand our reforestation and tracking ecosystem.
           </p>
         </div>
 
         <div className="support-cards-list">
           {faqData.map((item, index) => (
             <div className="support-card" key={index}>
-              <h3 className="support-card-question">{item.question}</h3>
-              <p className="support-card-answer fonts-body">{item.answer}</p>
+              <h3 className="support-card-question fonts-header-sub">
+                {item.question}
+              </h3>
+              <p className="support-card-answer fonts-body">
+                {item.answer}
+              </p>
             </div>
           ))}
         </div>
