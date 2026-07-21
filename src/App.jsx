@@ -27,10 +27,11 @@ function App() {
           <Support />
           <Reinforce/>
         </section>
-
+{/*
         <section id="products">
           <Products />
         </section>
+        */}
       </main> 
       <Footer/>
     </>
