@@ -1,5 +1,5 @@
 .reinforce-section {
-  margin: 0px auto 60px auto;
+  margin: 60px auto 120px auto;
   width: 100%;
   height: auto;
   display: flex;
@@ -8,7 +8,7 @@
   background: url("../../assets/bg.png") no-repeat center center/cover;
   padding: 40px 24px;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .reinforce-section::before {
@@ -32,7 +32,7 @@
   z-index: 2;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,26 +45,28 @@
   text-align: center;
   background-color: var(--primary-green);
   border: 2px solid var(--btn-border-color);
-  box-shadow: 0 4px 20px rgba(24, 72, 35, 0.6);
+  box-shadow: 0 4px 20px rgba(24, 72, 35, 0.2);
   border-radius: 20px;
   transition:
     background-color 0.2s ease,
-    transform 0.1s ease;
+    transform 0.1s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .reinforce-btn:hover {
-  background-color: #1f5c2d;
-  border: 2px solid #a3f0b0;
-  box-shadow: 0 0 15px rgba(163, 240, 176, 0.4);
+  background-color: var(--primary-green-hover);
+  border: 2px solid var(--btn-border-hover);
+  box-shadow: var(--shadow-btn-hover);
   cursor: pointer;
 }
 
 .reinforce-btn.active,
 .reinforce-btn:focus {
   transform: scale(0.98);
-  background-color: #0b3511;
+  background-color: var(--primary-green-active);
   border: 2px solid var(--btn-border-color);
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-btn-active);
   outline: none;
   cursor: pointer;
 }
@@ -72,6 +74,9 @@
 @media (min-width: 700px) and (max-width: 1200px) {
   .reinforce-section {
     padding: 40px 64px;
+  } 
+  .reinforce-card{
+    padding: 40px 40px;
   }
 }
 

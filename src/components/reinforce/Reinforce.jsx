@@ -10,17 +10,16 @@ const Reinforce = () => {
         <img src={bgImage} alt="Forest Background" className="reinforce-img" />
       </div>
       <div className="reinforce-card">
-        <h1 className="reinforce-title">
+        <h1 className="reinforce-title fonts-header">
             Together, We Grow Stronger
         </h1>
 
-        <p className="reinforce-text">
+        <p className="reinforce-text fonts-body">
           Your support helps us plant, protect, and monitor forests 24/7. Together, we empower communities, safeguard biodiversity, and create a greener legacy for the future.
         </p>
 
         <button
-          className="reinforce-btn"
-          onClick={() => console.log("Clicked!")}>
+          className="reinforce-btn">
           Join the Movement
         </button>
       </div>
