@@ -47,7 +47,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          <p className="brand-description">
+          <p className="brand-description fonts-body">
             Every tree we plant and protect today secures a healthier, greener
             world for generations to come.
           </p>
@@ -56,12 +56,12 @@ const Footer = () => {
         {/* Link Grupları */}
         <div className="footer-links-grid">
           <div className="footer-group">
-            <h4 className="group-title">Company</h4>
+            <h4 className="group-title fonts-body">Company</h4>
             <ul>
               {companyLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    className="group-link"
+                    className="group-link fonts-header-sub"
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
                     {link}
                   </a>
@@ -71,12 +71,12 @@ const Footer = () => {
           </div>
 
           <div className="footer-group">
-            <h4 className="group-title">Programs</h4>
+            <h4 className="group-title fonts-body">Programs</h4>
             <ul>
               {programLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    className="group-link"
+                    className="group-link fonts-header-sub"
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
                     {link}
                   </a>
@@ -86,12 +86,12 @@ const Footer = () => {
           </div>
 
           <div className="footer-group">
-            <h4 className="group-title">Services</h4>
+            <h4 className="group-title fonts-body">Services</h4>
             <ul>
               {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    className="group-link"
+                    className="group-link fonts-header-sub"
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
                     {link}
                   </a>
@@ -101,12 +101,12 @@ const Footer = () => {
           </div>
 
           <div className="footer-group">
-            <h4 className="group-title">Legal</h4>
+            <h4 className="group-title fonts-body">Legal</h4>
             <ul>
               {legalLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    className="group-link"
+                    className="group-link fonts-header-sub"
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
                     {link}
                   </a>
@@ -118,7 +118,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <div className="footer-copyright">
+        <div className="footer-copyright fonts-body">
           <p>
             © 2026 Copyright, All Right Reserved. Made by{" "}
             <a
