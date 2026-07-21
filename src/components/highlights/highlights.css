@@ -3,7 +3,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
   background-color: var(--white);
 }
 
@@ -48,10 +47,6 @@
   z-index: 3;
 }
 
-.highlights-main-title {
-  margin: 0;
-}
-
 .highlights-content-list {
   display: flex;
   flex-direction: column;
@@ -64,22 +59,11 @@
   gap: 30px;
 }
 
-.highlights-item-title {
-  margin: 0;
-}
-
-.highlights-item-text {
-  margin: 0;
-}
-
 .highlights-testimonial-box {
   border: 3px solid var(--white);
   padding: 40px 24px;
 }
 
-.testimonial-text {
-  margin: 0;
-}
 
 @media (min-width: 700px) and (max-width: 999px) {
   .highlights-container {
