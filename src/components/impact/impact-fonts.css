@@ -1,0 +1,20 @@
+.impact-header h2{
+    color:var(--header-color); 
+    text-align: center;
+} 
+
+.impact-header p{
+    color: var(--text-color); 
+    text-align: left;
+} 
+
+@media (max-width:480px){
+    .impact-header h2{
+        font-size: 25px; 
+        line-height: 38px;
+    } 
+    .impact-header p{
+        font-size: 18px; 
+        line-height: 30px;
+    }
+}

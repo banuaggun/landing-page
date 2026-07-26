@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer";
 import Fieldwork from "./components/fieldwork/Fieldwork";
 import Highlights from "./components/highlights/Highlights";
 import Support from "./components/support/Support";
+import Impact from "./components/impact/Impact";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Fieldwork /> 
           <Highlights />
           <Metrics /> 
+          <Impact />
           <Support />
           <Reinforce/>
         </section>
