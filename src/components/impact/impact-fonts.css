@@ -1,20 +1,61 @@
-.impact-header h2{
-    color:var(--header-color); 
-    text-align: center;
-} 
+.impact-header h2 {
+  color: var(--header-color);
+  text-align: center;
+}
 
-.impact-header p{
-    color: var(--text-color); 
-    text-align: left;
-} 
+.impact-header p,
+.mobile-map-guide p {
+  color: var(--text-color);
+  text-align: left;
+}
 
-@media (max-width:480px){
-    .impact-header h2{
-        font-size: 25px; 
-        line-height: 38px;
-    } 
-    .impact-header p{
-        font-size: 18px; 
-        line-height: 30px;
-    }
+@media (max-width: 480px) {
+  .impact-header h2 {
+    font-size: 25px;
+    line-height: 38px;
+  }
+  .impact-header p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .mobile-map-guide p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .impact-header h2 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .impact-header p,
+  .mobile-map-guide p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .impact-header h2 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .impact-header p,
+  .mobile-map-guide p {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .impact-header h2 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .impact-header p,
+  .mobile-map-guide p {
+    font-size: 24px;
+    line-height: 38px;
+  }
 }
