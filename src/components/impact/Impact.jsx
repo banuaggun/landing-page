@@ -4,6 +4,10 @@ import "./impact-fonts.css";
 import WorldMap from "./WorldMap";
 import MapCard from "./MapCard";
 
+import amazonPanorama from "../../assets/global-impact/amazon-panorama.jpg";
+import madagascarPanorama from "../../assets/global-impact/madagascar-panorama.jpg";
+import borneoPanorama from "../../assets/global-impact/borneo-panorama.jpg";
+
 const Impact = () => {
   const [activeProject, setActiveProject] = useState(null);
 
@@ -12,21 +16,21 @@ const Impact = () => {
       title: "Amazon Rainforest Restoration",
       story:
         "The Amazon is crucial for global climate stability but faces severe deforestation. Through this initiative, we partner with local communities to plant native trees and restore vital ecosystems.",
-      image: "amazon-panorama.jpg",
+      image: amazonPanorama,
       metrics: { time: "3 Years", seeds: "450K", target: "1M" },
     },
     madagascar: {
       title: "Madagascar Ecosystems",
       story:
         "Madagascar has lost over ninety percent of its original forests. We plant endemic trees to rebuild these unique, isolated habitats and protect endangered wildlife through active local community work.",
-      image: "madagascar-panorama.jpg",
+      image: madagascarPanorama,
       metrics: { time: "2 Years", seeds: "180K", target: "500K" },
     },
     borneo: {
       title: "Borneo Forest Rescue",
       story:
         "Destructive deforestation has heavily fragmented Borneo’s ancient rainforests. We plant native trees along critical river corridors to reconnect wildlife habitats, restore biodiversity, and stop soil erosion.",
-      image: "borneo-panorama.jpg",
+      image: borneoPanorama,
       metrics: { time: "5 Years", seeds: "820K", target: "1.5M" },
     },
   };
@@ -43,17 +47,17 @@ const Impact = () => {
           </p>
         </div>
 
-        <WorldMap
-          setActiveProject={setActiveProject}
-          activeProject={activeProject}
-        />
-
         {activeProject && (
           <MapCard
             project={projectsData[activeProject]}
             onClose={() => setActiveProject(null)}
           />
         )}
+
+        <WorldMap
+          setActiveProject={setActiveProject}
+          activeProject={activeProject}
+        />
       </div>
     </section>
   );
