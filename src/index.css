@@ -2,9 +2,11 @@
   --font-family-1: "EB Garamond", serif;
   --font-family-2: "Manrope", sans-serif;
 
-  --white: #ffffff;
+  --white: #ffffff; 
+  --bg-color:#f4f7f4;
   --header-color: #000000;
-  --text-color: #212121;
+  --text-color: #212121; 
+  --border-color:#d5dcdf;
 
   --primary-green: #184823;
   --primary-green-hover: #1f5c2d;

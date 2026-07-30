@@ -4,7 +4,7 @@
 }
 
 .impact-header p,
-.mobile-map-guide p {
+.map-guide p {
   color: var(--text-color);
   text-align: left;
 }
@@ -28,18 +28,22 @@
     font-size: 18px;
     line-height: 30px;
   }
-  .mobile-map-guide p,
+  .map-guide p,
   .map-card-story {
     font-size: 16px;
     line-height: 26px;
   }
   .map-card-value {
-    font-size: 25px;
-    line-height: 38px;
+    font-size: 24px;
+    line-height: 32px;
   }
   .map-card-title,
   .map-card-label {
     font-size: 20px;
+    line-height: 30px;
+  } 
+  .map-card-action-btn{
+    font-size: 18px; 
     line-height: 30px;
   }
 }
@@ -50,8 +54,28 @@
     line-height: 45px;
   }
   .impact-header p,
-  .mobile-map-guide p {
+  .map-guide p {
     font-size: 18px;
+    line-height: 30px;
+  } 
+  .map-card-title{
+    font-size: 25px; 
+    line-height: 38px;
+  } 
+  .map-card-label{
+    font-size: 20px; 
+    line-height: 30px;
+  } 
+  .map-card-value{
+    font-size: 28px; 
+    line-height: 36px;
+  }
+  .map-card-story{
+    font-size: 18px; 
+    line-height: 30px;
+  } 
+  .map-card-action-btn{
+    font-size: 18px; 
     line-height: 30px;
   }
 }
@@ -62,9 +86,29 @@
     line-height: 45px;
   }
   .impact-header p,
-  .mobile-map-guide p {
-    font-size: 20px;
-    line-height: 32px;
+  .map-guide p {
+    font-size: 18px;
+    line-height: 30px;
+  } 
+  .map-card-title {
+    font-size: 25px; 
+    line-height: 38px;
+  } 
+  .map-card-story{
+    font-size: 18px; 
+    line-height: 30px;
+  } 
+  .map-card-label{
+    font-size: 20px; 
+    line-height: 30px; 
+  } 
+  .map-card-value{
+    font-size: 28px; 
+    line-height: 36px;
+  }  
+  .map-card-action-btn{
+    font-size: 18px; 
+    line-height: 30px;
   }
 }
 
@@ -74,8 +118,28 @@
     line-height: 60px;
   }
   .impact-header p,
-  .mobile-map-guide p {
+  .map-guide p {
     font-size: 24px;
     line-height: 38px;
+  } 
+   .map-card-title {
+    font-size: 25px; 
+    line-height: 38px;
+  } 
+  .map-card-story{
+    font-size: 18px; 
+    line-height: 30px;
+  } 
+  .map-card-label{
+    font-size: 20px; 
+    line-height: 30px; 
+  } 
+  .map-card-value{
+    font-size: 28px; 
+    line-height: 36px;
+  }  
+  .map-card-action-btn{
+    font-size: 18px; 
+    line-height: 30px;
   }
 }

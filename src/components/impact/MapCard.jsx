@@ -52,7 +52,10 @@ const MapCard = ({ project, onClose }) => {
           </div>
         </div>
 
-        <button className="map-card-action-btn">Plant a Tree Here</button>
+        <div>
+<button className="map-card-action-btn fonts-header-sub">Plant a Tree Here</button>
+        </div>
+        
       </div>
     </div>
   );

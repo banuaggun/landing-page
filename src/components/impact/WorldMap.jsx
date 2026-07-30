@@ -6,7 +6,7 @@ import "./impact.css";
 const WorldMap = ({ setActiveProject }) => {
   return (
     <div className="map-wrapper">
-      <div className="mobile-map-guide">
+      <div className="map-guide">
         <div className="guide-icon-wrapper">
           <img src={exploreIcon} alt="Explore" />
         </div>

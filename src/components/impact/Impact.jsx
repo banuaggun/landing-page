@@ -13,7 +13,7 @@ const Impact = () => {
 
   const projectsData = {
     amazon: {
-      title: "Amazon Rainforest Restoration",
+      title: "Amazon Rainforest",
       story:
         "The Amazon is crucial for global climate stability but faces severe deforestation. Through this initiative, we partner with local communities to plant native trees and restore vital ecosystems.",
       image: amazonPanorama,
