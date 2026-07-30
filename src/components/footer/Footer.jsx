@@ -146,21 +146,27 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             aria-label="Dribbble">
-            <Dribbble />
+            <span>
+              <Dribbble />
+            </span>
           </a>
           <a
             href="https://github.com/banuaggun"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub">
-            <Github />
+            <span>
+              <Github />
+            </span>
           </a>
           <a
             href="https://www.linkedin.com/in/banuaggun/?locale=en_US"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn">
-            <LinkedIn />
+            <span>
+              <LinkedIn />
+            </span>
           </a>
         </div>
       </div>
