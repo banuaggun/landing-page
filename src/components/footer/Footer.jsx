@@ -5,7 +5,7 @@ import "./footer.css";
 import "./footer-fonts.css";
 import { Behance, Dribbble, Github, LinkedIn } from "../icons/Icons";
 
-const Footer = () => {
+const Footer = ({ setView }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -16,10 +16,15 @@ const Footer = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleLinkClick = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (setView) {
+      setView("home");
+    } else {
+      const element = document.getElementById("home");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -37,10 +42,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-brand">
           <div className="footer-logo">
-            <a
-              href="#home"
-              className="logo-footer"
-              onClick={() => handleLinkClick("home")}>
+            <a href="#home" className="logo-footer" onClick={handleLogoClick}>
               <img
                 src={isMobile ? logoMobile : logoWeb}
                 alt="Tree Foundation"

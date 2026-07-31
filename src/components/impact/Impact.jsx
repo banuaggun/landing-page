@@ -8,7 +8,7 @@ import amazonPanorama from "../../assets/global-impact/amazon-panorama.jpg";
 import madagascarPanorama from "../../assets/global-impact/madagascar-panorama.jpg";
 import borneoPanorama from "../../assets/global-impact/borneo-panorama.jpg";
 
-const Impact = () => {
+const Impact = ({ setView }) => {
   const [activeProject, setActiveProject] = useState(null);
 
   const projectsData = {
@@ -51,6 +51,7 @@ const Impact = () => {
           <MapCard
             project={projectsData[activeProject]}
             onClose={() => setActiveProject(null)}
+            setView={setView}
           />
         )}
 

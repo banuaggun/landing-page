@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import closeIcon from "../../assets/global-impact/close-icon.svg";
 import dragIcon from "../../assets/global-impact/drag-icon.svg";
 
-const MapCard = ({ project, onClose }) => {
+const MapCard = ({ project, onClose, setView }) => {
   if (!project) return null;
 
   const [isPanModeActive, setIsPanModeActive] = useState(false);
@@ -154,7 +154,9 @@ const MapCard = ({ project, onClose }) => {
         </div>
 
         <div>
-          <button className="map-card-action-btn fonts-header-sub">
+          <button
+            className="map-card-action-btn fonts-header-sub"
+            onClick={() => setView("action")}>
             Plant a Tree Here
           </button>
         </div>
