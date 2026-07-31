@@ -3,16 +3,35 @@ import logoMobile from "../../assets/logos/logo-mobile.svg";
 import logoWeb from "../../assets/logos/logo-web.svg";
 import "./navbar.css";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); 
-  const [dropdownOpen, setDropdownOpen] = useState(false); 
+const Navbar = ({ setView }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const navbarRef = useRef(null);
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
+  const handleHomeNavigation = (linkId, e) => {
+    e.preventDefault();
+
+    if (setView) {
+      setView("home");
+    }
+
+    if (linkId === "home") {
+      window.history.pushState(null, "", "/");
+    } else {
+      window.history.pushState(null, "", `#${linkId}`);
+    }
+
+    setTimeout(() => {
+      const element = document.getElementById(linkId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+
+    setActiveLink(linkId);
     setIsOpen(false);
     setDropdownOpen(false);
   };
@@ -92,7 +111,7 @@ const Navbar = () => {
           <a
             href="#home"
             className="logo"
-            onClick={() => handleLinkClick("home")}>
+            onClick={(e) => handleHomeNavigation("home", e)}>
             <img src={isMobile ? logoMobile : logoWeb} alt="Tree Foundation" />
           </a>
 
@@ -100,13 +119,13 @@ const Navbar = () => {
             <a
               href="#home"
               className={activeLink === "home" ? "active" : ""}
-              onClick={() => handleLinkClick("home")}>
+              onClick={(e) => handleHomeNavigation("home", e)}>
               Home
             </a>
             <a
               href="#about"
               className={activeLink === "about" ? "active" : ""}
-              onClick={() => handleLinkClick("about")}>
+              onClick={(e) => handleHomeNavigation("about", e)}>
               About Us
             </a>
 
@@ -132,13 +151,17 @@ const Navbar = () => {
               <div className="desktop-dropdown-menu">
                 <a
                   href="#biodiversity"
-                  onClick={() => handleLinkClick("programs")}>
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Biodiversity & Ecosystems
                 </a>
-                <a href="#carbon" onClick={() => handleLinkClick("programs")}>
+                <a
+                  href="#carbon"
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Carbon Offset Program
                 </a>
-                <a href="#forest" onClick={() => handleLinkClick("programs")}>
+                <a
+                  href="#forest"
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Forest Monitoring
                 </a>
               </div>
@@ -147,7 +170,7 @@ const Navbar = () => {
             <a
               href="#contact"
               className={activeLink === "contact" ? "active" : ""}
-              onClick={() => handleLinkClick("contact")}>
+              onClick={(e) => handleHomeNavigation("contact", e)}>
               Contact Us
             </a>
           </div>
@@ -161,7 +184,11 @@ const Navbar = () => {
             <span className="fonts-body">444 0 000</span>
           </a>
 
-          <button className="quote-btn fonts-body">Get Started</button>
+          <button
+            className="quote-btn fonts-body"
+            onClick={() => setView && setView("action")}>
+            Get Started
+          </button>
 
           <div
             className={`hamburger ${isOpen ? "open" : ""}`}
@@ -180,13 +207,13 @@ const Navbar = () => {
             <a
               href="#home"
               className={activeLink === "home" ? "active" : ""}
-              onClick={() => handleLinkClick("home")}>
+              onClick={(e) => handleHomeNavigation("home", e)}>
               Home
             </a>
             <a
               href="#about"
               className={activeLink === "about" ? "about" : ""}
-              onClick={() => handleLinkClick("about")}>
+              onClick={(e) => handleHomeNavigation("about", e)}>
               About Us
             </a>
 
@@ -214,13 +241,17 @@ const Navbar = () => {
                 className={`mobile-dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                 <a
                   href="#biodiversity"
-                  onClick={() => handleLinkClick("programs")}>
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Biodiversity & Ecosystems
                 </a>
-                <a href="#carbon" onClick={() => handleLinkClick("programs")}>
+                <a
+                  href="#carbon"
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Carbon Offset Program
                 </a>
-                <a href="#forest" onClick={() => handleLinkClick("programs")}>
+                <a
+                  href="#forest"
+                  onClick={(e) => handleHomeNavigation("programs", e)}>
                   Forest Monitoring
                 </a>
               </div>
@@ -229,7 +260,7 @@ const Navbar = () => {
             <a
               href="#contact"
               className={activeLink === "contact" ? "active" : ""}
-              onClick={() => handleLinkClick("contact")}>
+              onClick={(e) => handleHomeNavigation("contact", e)}>
               Contact Us
             </a>
           </div>
