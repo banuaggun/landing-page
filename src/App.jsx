@@ -11,13 +11,16 @@ import Fieldwork from "./components/fieldwork/Fieldwork";
 import Highlights from "./components/highlights/Highlights";
 import Support from "./components/support/Support";
 import Impact from "./components/impact/Impact";
-import ActionForm from "./components/common/ActionForm";
+import ActionForm from "./components/common/form/ActionForm";
 
 function App() {
-  const [view, setView] = useState("home");
+  const [view, setView] = useState(() => {
+    return localStorage.getItem("current_view") || "home";
+  });
 
   const navigateTo = (pageName) => {
     setView(pageName);
+    localStorage.setItem("current_view", pageName);
 
     if (pageName === "action") {
       window.history.pushState(null, "", "/action");
@@ -31,7 +34,7 @@ function App() {
   return (
     <>
       <div className="nav-bar">
-        <Navbar setView={navigateTo} />
+        <Navbar setView={navigateTo} currentView={view} />
       </div>
       <main>
         {view === "home" ? (
@@ -43,7 +46,7 @@ function App() {
             <Metrics />
             <Impact setView={navigateTo} />
             <Support />
-            <Reinforce />
+            <Reinforce /> 
           </section>
         ) : (
           <section id="action-form-section" className="content">

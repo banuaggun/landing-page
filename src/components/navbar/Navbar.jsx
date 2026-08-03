@@ -3,13 +3,20 @@ import logoMobile from "../../assets/logos/logo-mobile.svg";
 import logoWeb from "../../assets/logos/logo-web.svg";
 import "./navbar.css";
 
-const Navbar = ({ setView }) => {
+const Navbar = ({ setView, currentView }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const navbarRef = useRef(null);
+  useEffect(() => {
+    if (currentView === "action") {
+      setActiveLink("");
+    } else if (currentView === "home" && activeLink === "") {
+      setActiveLink("home");
+    }
+  }, [currentView]);
 
   const handleHomeNavigation = (linkId, e) => {
     e.preventDefault();
@@ -102,7 +109,7 @@ const Navbar = ({ setView }) => {
     return () => {
       observers.forEach(({ observer, element }) => observer.unobserve(element));
     };
-  }, []);
+  }, [currentView]);
 
   return (
     <nav className="navbar" ref={navbarRef}>
@@ -256,7 +263,6 @@ const Navbar = ({ setView }) => {
                 </a>
               </div>
             </div>
-
             <a
               href="#contact"
               className={activeLink === "contact" ? "active" : ""}
