@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./action-form.css"; 
 import { projectsData } from "../data/ProjectsData";
+import { CaretDown } from "../../icons/Icons";
 
 const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
   const [region, setRegion] = useState(defaultRegion);
@@ -93,7 +94,9 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                   <span className="selected-option-text fonts-header-sub">
                     {projectsData[region].title}
                   </span>
-                  <span className="dropdown-arrow-icon">▼</span>
+                  <span className="dropdown-arrow-icon">
+                    <CaretDown />
+                  </span>
                 </button>
 
                 {isDropdownOpen && (
