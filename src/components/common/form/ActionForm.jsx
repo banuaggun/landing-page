@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./action-form.css";
-import amazonPanorama from "../../../assets/global-impact/amazon-panorama.jpg";
-import madagascarPanorama from "../../../assets/global-impact/madagascar-panorama.jpg";
-import borneoPanorama from "../../../assets/global-impact/borneo-panorama.jpg";
+import "./action-form.css"; 
+import { projectsData } from "../data/ProjectsData";
 
-const ActionForm = ({ setView }) => {
-  const [region, setRegion] = useState("amazon");
+const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
+  const [region, setRegion] = useState(defaultRegion);
   const [treeCount, setTreeCount] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -20,33 +18,6 @@ const ActionForm = ({ setView }) => {
   const dropdownRef = useRef(null);
 
   const co2Savings = treeCount * 22;
-
-  const regionGallery = {
-    amazon: {
-      title: "Amazon Rainforest",
-      subtitle: "RESTORING THE EARTH'S LUNGS",
-      latLong: "03° 28' S / 62° 12' W",
-      imgUrl: amazonPanorama,
-      fact: "The Amazon acts as the planet's primary carbon sink. However, over 17% of the forest has been lost in recent decades. Your contribution targets high-deforestation zones.",
-      location: "South America",
-    },
-    madagascar: {
-      title: "Madagascar Island",
-      subtitle: "ISOLATED BIODIVERSITY EVOLUTION",
-      latLong: "18° 46' S / 46° 49' E",
-      imgUrl: madagascarPanorama,
-      fact: "Madagascar features 90% wildlife found nowhere else on Earth. Deforestation has isolated these species. Your planting builds biological corridors.",
-      location: "East Africa",
-    },
-    borneo: {
-      title: "Borneo Forest",
-      subtitle: "CRITICAL WILDLIFE REFUGE CORRIDOR",
-      latLong: "00° 59' N / 114° 39' E",
-      imgUrl: borneoPanorama,
-      fact: "Borneo's ancient rainforests are critical for orangutan survival. Massive conversion has fragmented the habitat. Your roots restore riverbanks and prevent soil erosion.",
-      location: "Southeast Asia",
-    },
-  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -120,14 +91,14 @@ const ActionForm = ({ setView }) => {
                   aria-haspopup="listbox"
                   aria-expanded={isDropdownOpen}>
                   <span className="selected-option-text fonts-header-sub">
-                    {regionGallery[region].title}
+                    {projectsData[region].title}
                   </span>
                   <span className="dropdown-arrow-icon">▼</span>
                 </button>
 
                 {isDropdownOpen && (
                   <ul className="dropdown-options-list" role="listbox">
-                    {Object.keys(regionGallery).map((key) => (
+                    {Object.keys(projectsData).map((key) => (
                       <li
                         key={key}
                         role="option"
@@ -137,7 +108,7 @@ const ActionForm = ({ setView }) => {
                           setRegion(key); 
                           setIsDropdownOpen(false);
                         }}>
-                        {regionGallery[key].title}
+                        {projectsData[key].title}
                       </li>
                     ))}
                   </ul>
@@ -148,23 +119,23 @@ const ActionForm = ({ setView }) => {
             <div className="action-gallery">
               <div className="action-header-area">
                 <span className="action-subtitle fonts-header">
-                  {regionGallery[region].subtitle}
+                  {projectsData[region].subtitle}
                 </span>
 
                 <h1 className="action-title fonts-header">
-                  {regionGallery[region].title}
+                  {projectsData[region].text}
                 </h1>
 
                 <p className="action-fact fonts-body">
-                  {regionGallery[region].fact}
+                  {projectsData[region].fact}
                 </p>
               </div>
 
               <div className="action-card">
                 <div className="action-img-wrapper">
                   <img
-                    src={regionGallery[region].imgUrl}
-                    alt={`${regionGallery[region].title} panoramic landscape view`}
+                    src={projectsData[region].imgUrl}
+                    alt={`${projectsData[region].title} panoramic landscape view`}
                     className="action-main-img"
                   />
                 </div>
@@ -206,10 +177,11 @@ const ActionForm = ({ setView }) => {
                     Quota
                   </span>
                 </div>
+
                 <div className="action-scale-max-hint fonts-body">
                   <p>You can allocate up to 100,000 units today</p>
                 </div>
-                {/* YENİ NESİL DİNAMİK MANİFESTO METNİ */}
+
                 <div
                   className="action-scale-live-manifesto fonts-body"
                   aria-live="polite">

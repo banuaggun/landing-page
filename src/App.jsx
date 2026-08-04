@@ -13,16 +13,22 @@ import Support from "./components/support/Support";
 import Impact from "./components/impact/Impact";
 import ActionForm from "./components/common/form/ActionForm";
 
-function App() {
+function App() { 
   const [view, setView] = useState(() => {
-    return localStorage.getItem("current_view") || "home";
+    return sessionStorage.getItem("current_view") || "home";
+  }); 
+
+  const [selectedFormRegion, setSelectedFormRegion] = useState(() => {
+    return sessionStorage.getItem("selected_region") || "amazon";
   });
 
-  const navigateTo = (pageName) => {
+  const navigateTo = (pageName, regionName = "amazon") => { 
     setView(pageName);
-    localStorage.setItem("current_view", pageName);
+    sessionStorage.setItem("current_view", pageName);
 
     if (pageName === "action") {
+      setSelectedFormRegion(regionName);
+      sessionStorage.setItem("selected_region", regionName); 
       window.history.pushState(null, "", "/action");
     } else if (pageName === "home") {
       window.history.pushState(null, "", "/");
@@ -50,7 +56,10 @@ function App() {
           </section>
         ) : (
           <section id="action-form-section" className="content">
-            <ActionForm setView={navigateTo} />
+            <ActionForm 
+              setView={navigateTo} 
+              defaultRegion={sessionStorage.getItem("selected_region") || selectedFormRegion} 
+            />
           </section>
         )}
 
