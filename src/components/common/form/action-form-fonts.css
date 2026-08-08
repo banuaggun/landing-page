@@ -1,0 +1,105 @@
+.action-tag {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--header-color);
+}
+
+.action-close-link {
+  color: var(--text-color);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.action-subtitle {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.action-label,
+.minimal-label {
+  text-transform: uppercase;
+  color: rgba(33, 33, 33, 0.7);
+  letter-spacing: 2px;
+}
+
+.action-fact,
+.action-scale-live-manifesto {
+  color: var(--text-color);
+  text-align: left;
+}
+
+.action-scale-numeric-input {
+  text-align: left;
+  color: var(--header-color);
+}
+
+.action-scale-numeric-input-unit {
+  color: var(--text-color);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.action-scale-max-hint {
+  color: rgba(33, 33, 33, 0.8);
+}
+
+.action-btn-submit {
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .action-tag {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .action-label {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .action-subtitle,
+  .minimal-label {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .action-close-link,
+  .action-fact,
+  .action-scale-max-hint,
+  .action-scale-live-manifesto,
+  .action-btn-submit {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .action-scale-numeric-input {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 2600px) {
+  .action-tag {
+    font-size: 38px;
+    line-height: 50px;
+  }
+  .action-label {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .action-subtitle,
+  .minimal-label {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .action-close-link,
+  .action-fact,
+  .action-scale-max-hint,
+  .action-scale-live-manifesto,
+  .action-btn-submit {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .action-scale-numeric-input {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
