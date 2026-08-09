@@ -3,11 +3,13 @@ import "./action-form.css";
 import "./action-form-fonts.css";
 import { projectsData } from "../data/ProjectsData";
 import { CaretDown } from "../../icons/Icons";
+import Certificate from "./Certificate";
 
 const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
   const [region, setRegion] = useState(defaultRegion);
   const [treeCount, setTreeCount] = useState(0);
   const [treeError, setTreeError] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -68,7 +70,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
       return;
     }
 
-    alert(`Deployment authorized for ${formData.name}.`);
+    setIsSubmitted(true);
   };
 
   return (
@@ -299,7 +301,8 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                     />
                     <span className="custom-checkmark"></span>
                     <p className="action-fact fonts-body">
-                      I want to receive my official planting certificate via email
+                      I want to receive my official planting certificate via
+                      email
                     </p>
                   </label>
                 </div>
@@ -315,6 +318,21 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
             </div>
           </form>
         </div>
+
+        {isSubmitted && (
+          <Certificate
+            formData={formData}
+            treeCount={treeCount}
+            region={region}
+            co2Savings={co2Savings}
+            projectsData={projectsData}
+            onClose={() => {
+              setIsSubmitted(false);
+              setView("home");
+            }}
+            certificateId={`GRN-${Math.floor(100000 + Math.random() * 900000)}`}
+          />
+        )}
       </div>
     </div>
   );

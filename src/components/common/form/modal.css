@@ -1,0 +1,421 @@
+.certificate-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 10, 6, 0.95);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 0;
+}
+
+.certificate-figma-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #060b07;
+  overflow: hidden;
+}
+
+.certificate-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d140f;
+  padding: 16px 40px;
+  border-bottom: 1px solid rgba(82, 183, 136, 0.15);
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.top-bar-left-indicator {
+  color: #74c69d;
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.certificate-logo-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #52b788;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #52b788;
+}
+
+.certificate-actions-row {
+  display: flex;
+  gap: 12px;
+}
+
+.cert-action-btn {
+  background: transparent;
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  color: #b7e4c7;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.cert-action-btn.print-btn {
+  background: #52b788;
+  border-color: #52b788;
+  color: #060b07;
+}
+
+.cert-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.cert-action-btn.print-btn:hover {
+  background: #40916c;
+}
+
+.cert-action-btn.close-btn:hover {
+  border-color: #52b788;
+  color: #fff;
+}
+
+.certificate-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.certificate-display-area {
+  width: 100%;
+  max-width: 800px;
+}
+
+.certificate-frame {
+  background: #ffffff;
+  color: #1b4332;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.certificate-inner-border {
+  border: 2px solid #2d6a4f;
+  outline: 1px solid #52b788;
+  outline-offset: -6px;
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.certificate-badge-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.certificate-badge-ring {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border: 1px dashed #40916c;
+  border-radius: 50%;
+}
+
+.certificate-badge {
+  font-size: 2rem;
+  z-index: 2;
+  background: #fff;
+  padding: 4px;
+}
+
+.certificate-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1b4332;
+  margin: 0;
+}
+
+.certificate-divider-line {
+  width: 60px;
+  height: 2px;
+  background: #40916c;
+  margin: 12px auto;
+}
+
+.certificate-meta {
+  color: #52b788;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.guardian-celebrated-name {
+  font-size: 2.2rem;
+  color: #0d1f14;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.certificate-declaration {
+  color: #2d6a4f;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+}
+
+.cert-highlight {
+  color: #1b4332;
+  font-weight: 700;
+}
+
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(42, 106, 79, 0.15);
+  padding-top: 20px;
+}
+
+.cert-footer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.cert-footer-block:nth-child(2) {
+  align-items: center;
+}
+.cert-footer-block:last-child {
+  align-items: flex-end;
+}
+
+.cert-label {
+  color: #74c69d;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.cert-date,
+.cert-id {
+  color: #1b4332;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cert-signature {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #2d6a4f;
+}
+
+.fade-in {
+  animation: modalReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media print {
+  nav,
+  navbar,
+  .navbar,
+  #navbar,
+  footer,
+  .footer,
+  #footer,
+  header:not(.certificate-top-bar),
+  .main-header,
+  #header,
+  .action-form-header,
+  .action-form-area,
+  .certificate-top-bar,
+  .certificate-actions-row,
+  aside,
+  .sidebar,
+  #sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+  }
+
+  html,
+  body {
+    visibility: hidden !important;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #root,
+  main,
+  .main-content,
+  .action-form-section,
+  .action-form-layout,
+  .certificate-modal-overlay,
+  .certificate-figma-window,
+  .certificate-scroll-body,
+  .certificate-display-area {
+    visibility: visible !important;
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .certificate-frame,
+  .certificate-frame * {
+    visibility: visible !important;
+  }
+
+  .certificate-frame {
+    display: block !important;
+    position: relative !important;
+    margin: 40px auto !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    padding: 12px !important;
+    background: #ffffff !important;
+    border: 2px solid #1b4332 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  .certificate-inner-border {
+    border: 2px solid #2d6a4f !important;
+    outline: 1px solid #52b788 !important;
+    outline-offset: -6px !important;
+    padding: 50px 40px !important;
+    background: #ffffff !important;
+
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .certificate-title,
+  .guardian-celebrated-name,
+  .cert-highlight,
+  .certificate-badge {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .certificate-footer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(42, 106, 79, 0.15) !important;
+    margin-top: 40px !important;
+    padding-top: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  .cert-footer-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .cert-footer-block:nth-child(2) {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .cert-footer-block:last-child {
+    align-items: flex-end !important;
+    text-align: right !important;
+  }
+
+  .cert-label {
+    display: block !important;
+    margin-bottom: 6px !important;
+    white-space: nowrap !important;
+    color: #74c69d !important;
+  }
+
+  .cert-date,
+  .cert-signature,
+  .cert-id {
+    display: block !important;
+    margin-top: 2px !important;
+    word-break: break-all !important;
+    color: #1b4332 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-top-bar {
+    padding: 16px 20px;
+  }
+  .top-bar-left-indicator {
+    display: none;
+  }
+  .certificate-inner-border {
+    padding: 30px 16px;
+  }
+  .guardian-celebrated-name {
+    font-size: 1.6rem;
+  }
+  .certificate-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .cert-footer-block,
+  .cert-footer-block:nth-child(2),
+  .cert-footer-block:last-child {
+    align-items: center;
+  }
+}
