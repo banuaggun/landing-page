@@ -17,7 +17,10 @@
 
   --shadow-btn-default: 0 4px 20px rgba(24, 72, 35, 0.6);
   --shadow-btn-hover: 0 0 15px rgba(163, 240, 176, 0.4);
-  --shadow-btn-active: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-btn-active: inset 0 2px 6px rgba(0, 0, 0, 0.4); 
+
+  --print-btn:#52b788; 
+  --print-btn-hover:#40916c;
 }
 
 h1,

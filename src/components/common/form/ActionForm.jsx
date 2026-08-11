@@ -89,7 +89,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
         </header>
 
         <div className="action-form-area">
-          <form onSubmit={handleSubmit} className="action-form" novalidate>
+          <form onSubmit={handleSubmit} className="action-form" noValidate>
             <div className="action-field-block">
               <div className="action-label fonts-header">
                 01 / CHOOSE YOUR ECOSYSTEM

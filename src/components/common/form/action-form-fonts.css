@@ -48,17 +48,50 @@
   color: var(--white);
 }
 
+.top-bar-left-indicator {
+  color: var(--primary-green);
+}
+
+.cert-action-btn {
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.certificate-title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--header-color);
+}
+
+.certificate-meta {
+  color: var(--primary-green);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.guardian-celebrated-name {
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
 @media (max-width: 480px) {
   .action-tag {
     font-size: 28px;
     line-height: 36px;
   }
-  .action-label {
+  .action-label,
+  .top-bar-left-indicator,
+  .certificate-title,
+  .guardian-celebrated-name {
     font-size: 24px;
     line-height: 32px;
   }
   .action-subtitle,
-  .minimal-label {
+  .minimal-label,
+  .certificate-meta {
     font-size: 18px;
     line-height: 24px;
   }
@@ -66,7 +99,8 @@
   .action-fact,
   .action-scale-max-hint,
   .action-scale-live-manifesto,
-  .action-btn-submit {
+  .action-btn-submit,
+  .cert-action-btn {
     font-size: 16px;
     line-height: 26px;
   }
@@ -81,12 +115,16 @@
     font-size: 38px;
     line-height: 50px;
   }
-  .action-label {
+  .action-label,
+  .top-bar-left-indicator,
+  .certificate-title,
+  .guardian-celebrated-name {
     font-size: 28px;
     line-height: 36px;
   }
   .action-subtitle,
-  .minimal-label {
+  .minimal-label,
+  .certificate-meta {
     font-size: 18px;
     line-height: 24px;
   }
@@ -94,7 +132,8 @@
   .action-fact,
   .action-scale-max-hint,
   .action-scale-live-manifesto,
-  .action-btn-submit {
+  .action-btn-submit,
+  .cert-action-btn {
     font-size: 16px;
     line-height: 26px;
   }
