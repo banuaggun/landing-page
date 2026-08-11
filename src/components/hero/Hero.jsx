@@ -7,7 +7,7 @@ import user3 from "../../assets/user-images/user-3.png";
 import './hero-fonts.css';
 import "./hero.css";
 
-export default function Hero() {
+export default function Hero({setView}) {
   return (
     <div className="hero-section">
       <div className="hero-container">
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-cta">
-            <button className="hero-btn fonts-body">
+            <button onClick={() => setView("action")} className="hero-btn fonts-body">
               <span>Let's Save the Future</span>{" "}
             </button>
           </div>

@@ -3,7 +3,7 @@ import "./reinforce.css";
 import "./reinforce-fonts.css";
 import bgImage from "../../assets/bg.png";
 
-const Reinforce = () => {
+const Reinforce = ({setView}) => {
   return (
     <div className="reinforce-section">
       <div className="reinforce-image-side">
@@ -18,7 +18,7 @@ const Reinforce = () => {
           Your support helps us plant, protect, and monitor forests 24/7. Together, we empower communities, safeguard biodiversity, and create a greener legacy for the future.
         </p>
 
-        <button
+        <button onClick={() => setView("action")} 
           className="reinforce-btn">
           Join the Movement
         </button>

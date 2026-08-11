@@ -52,7 +52,7 @@ function App() {
             <Metrics />
             <Impact setView={navigateTo} />
             <Support />
-            <Reinforce /> 
+            <Reinforce setView={navigateTo} /> 
           </section>
         ) : (
           <section id="action-form-section" className="content">
