@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./action-form.css";
 import "./action-form-fonts.css";
+
 import { projectsData } from "../data/ProjectsData";
-import { CaretDown } from "../../icons/Icons";
 import Certificate from "./Certificate";
+import Dropdown from "../dropdown/Dropdown";
+import FormInput from "./FormInput";
 
 const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
   const [region, setRegion] = useState(defaultRegion);
@@ -18,9 +20,6 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
   });
 
   const [emailError, setEmailError] = useState("");
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
   const co2Savings = treeCount * 22;
 
@@ -39,18 +38,9 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     return emailRegex.test(email);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,6 +63,18 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
     setIsSubmitted(true);
   };
 
+  const dropdownOptions = Object.entries(projectsData).map(
+    ([key, project]) => ({
+      key,
+      title: project.title,
+    }),
+  );
+
+  const selectedRegion = {
+    key: region,
+    title: projectsData[region].title,
+  };
+
   return (
     <div className="action-form-section">
       <div className="action-form-layout">
@@ -80,6 +82,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
           <span className="action-tag fonts-header">
             EARTH RE-GREEN PROJECT
           </span>
+
           <button
             className="action-close-link fonts-body"
             onClick={() => setView("home")}
@@ -90,45 +93,18 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
 
         <div className="action-form-area">
           <form onSubmit={handleSubmit} className="action-form" noValidate>
+
             <div className="action-field-block">
               <div className="action-label fonts-header">
                 01 / CHOOSE YOUR ECOSYSTEM
               </div>
-              <div
-                className="custom-dropdown-wrapper fonts-header-sub"
-                ref={dropdownRef}>
-                <button
-                  type="button"
-                  className={`dropdown-trigger-box ${isDropdownOpen ? "open" : ""}`}
-                  onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  aria-haspopup="listbox"
-                  aria-expanded={isDropdownOpen}>
-                  <span className="selected-option-text fonts-header-sub">
-                    {projectsData[region].title}
-                  </span>
-                  <span className="dropdown-arrow-icon">
-                    <CaretDown />
-                  </span>
-                </button>
 
-                {isDropdownOpen && (
-                  <ul className="dropdown-options-list" role="listbox">
-                    {Object.keys(projectsData).map((key) => (
-                      <li
-                        key={key}
-                        role="option"
-                        aria-selected={region === key}
-                        className={`dropdown-option-item ${region === key ? "active" : ""}`}
-                        onClick={() => {
-                          setRegion(key);
-                          setIsDropdownOpen(false);
-                        }}>
-                        {projectsData[key].title}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <Dropdown
+                options={dropdownOptions}
+                value={selectedRegion}
+                onChange={(option) => setRegion(option.key)}
+                placeholder="Choose ecosystem"
+              />
             </div>
 
             <div className="action-gallery">
@@ -154,6 +130,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
             </div>
 
             <div className="action-right-content">
+
               <div className="action-scale-area">
                 <div className="action-field-block">
                   <label
@@ -161,6 +138,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                     className="action-label fonts-header">
                     02 / Scale your Impact
                   </label>
+
                   <p className="action-fact fonts-body">
                     Enter the exact volume of future you wish to secure today.
                   </p>
@@ -180,13 +158,13 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                         if (val > 100000) return;
 
                         setTreeError(false);
-
                         setTreeCount(val < 0 ? 1 : val);
                       }}
                       className="action-scale-numeric-input fonts-header"
                       placeholder="0"
                       aria-live="polite"
                     />
+
                     <span className="action-scale-numeric-input-unit fonts-body">
                       Quota
                     </span>
@@ -219,7 +197,9 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                       </p>
                     ) : (
                       <p
-                        className={`manifesto-placeholder fonts-body ${treeError ? "has-tree-error" : ""}`}>
+                        className={`manifesto-placeholder fonts-body ${
+                          treeError ? "has-tree-error" : ""
+                        }`}>
                         {treeError
                           ? "Action required: Allocation quantity cannot be zero. Please specify a value."
                           : "Please specify a quantity to measure your ecological signature."}
@@ -236,6 +216,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                     className="action-label fonts-header">
                     03 / Personel Details
                   </label>
+
                   <p className="action-fact fonts-body">
                     Complete your dedication to receive your digital
                     certificate.
@@ -243,51 +224,27 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                 </div>
 
                 <div className="inputs-group">
-                  <div className="input-field-container">
-                    <label
-                      htmlFor="guardian-name-input"
-                      className="minimal-label fonts-header">
-                      Full Name
-                    </label>
-                    <input
-                      id="guardian-name-input"
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      className="minimal-text-input fonts-body"
-                      autoComplete="name"
-                    />
-                  </div>
+                  <FormInput
+                    id="guardian-name-input"
+                    name="name"
+                    label="Full Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    autoComplete="name"
+                  />
 
-                  <div
-                    className={`input-field-container ${emailError ? "has-error" : ""}`}>
-                    <label
-                      htmlFor="guardian-email-input"
-                      className="minimal-label fonts-header">
-                      Email Address
-                    </label>
-                    <input
-                      id="guardian-email-input"
-                      type="text"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder=" "
-                      className="minimal-text-input fonts-body"
-                      autoComplete="email"
-                    />
-                    {emailError && (
-                      <span
-                        className="input-error-message fonts-body"
-                        aria-live="assertive">
-                        {emailError}
-                      </span>
-                    )}
-                  </div>
+                  <FormInput
+                    id="guardian-email-input"
+                    name="email"
+                    label="Email Address"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    error={emailError}
+                    required
+                    autoComplete="email"
+                  />
 
                   <label
                     htmlFor="certificate-checkbox"
@@ -299,7 +256,9 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                       checked={formData.certificate}
                       onChange={handleInputChange}
                     />
+
                     <span className="custom-checkmark"></span>
+
                     <p className="action-fact fonts-body">
                       I want to receive my official planting certificate via
                       email
@@ -308,6 +267,7 @@ const ActionForm = ({ setView, defaultRegion = "amazon" }) => {
                 </div>
               </div>
             </div>
+
             <div className="action-btn">
               <button
                 type="submit"
