@@ -16,7 +16,6 @@ import ActionForm from "./components/common/form/ActionForm";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/ContactPage";
 import Programs from "./pages/programs/Programs";
-import ContactForm from "./components/common/contact-form/ContactForm";
 
 function App() {
   const [view, setView] = useState(() => {
@@ -72,7 +71,6 @@ function App() {
             <Metrics />
             <Impact setView={navigateTo} />
             <Support />
-            <ContactForm />
             <Reinforce setView={navigateTo} />
           </section>
         )}

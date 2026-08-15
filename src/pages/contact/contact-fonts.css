@@ -1,0 +1,42 @@
+.contact-header {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--header-color);
+}
+
+.contact-question {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.contact-text {
+  color: var(--text-color);
+  text-align: left;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .contact-subtitle {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 2600px) {
+  .contact-header {
+    font-size: 38px;
+    line-height: 50px;
+  }
+  .contact-subtitle {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
