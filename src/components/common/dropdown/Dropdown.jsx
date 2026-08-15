@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { CaretDown } from "../../icons/Icons";
+import { CaretDown } from "../../icons/Icons"; 
+import './dropdown.css';
 
 const Dropdown = ({
   options,

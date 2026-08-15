@@ -1,3 +1,6 @@
+import React from "react"; 
+import './form.css';
+
 const FormMessage = ({
   id,
   name,

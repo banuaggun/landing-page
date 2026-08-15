@@ -16,8 +16,7 @@
   color: var(--text-color);
 }
 
-.action-label,
-.minimal-label {
+.action-label {
   text-transform: uppercase;
   color: rgba(33, 33, 33, 0.7);
   letter-spacing: 2px;
@@ -90,7 +89,6 @@
     line-height: 32px;
   }
   .action-subtitle,
-  .minimal-label,
   .certificate-meta {
     font-size: 18px;
     line-height: 24px;
@@ -123,7 +121,6 @@
     line-height: 36px;
   }
   .action-subtitle,
-  .minimal-label,
   .certificate-meta {
     font-size: 18px;
     line-height: 24px;
@@ -140,5 +137,6 @@
   .action-scale-numeric-input {
     font-size: 38px;
     line-height: 50px;
-  }
+  } 
+  
 }

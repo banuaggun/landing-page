@@ -1,0 +1,36 @@
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+} 
+
+.minimal-text-input {
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid var(--border-color);
+  padding: 6px 0;
+  font-size: 16px;
+  color: var(--header-color);
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+} 
+
+textarea.minimal-text-input{
+  resize: none;
+}
+
+.minimal-label {
+  transition: all 0.3s ease;
+  pointer-events: none; 
+  text-transform: uppercase;
+  color: rgba(33, 33, 33, 0.7);
+  letter-spacing: 2px; 
+  font-size: 18px;
+    line-height: 24px;
+}  
+
+.input-field-container.has-error {
+  color: #dc2626;
+} 
+

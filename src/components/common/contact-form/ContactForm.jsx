@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../form/FormInput";
 import FormMessage from "../form/FormMessage";
-import "./contact-form.css";
+import "./contact-form.css"; 
 
 const ContactForm = ({ setView, onClose }) => {
   const [formData, setFormData] = useState({
@@ -76,7 +76,7 @@ const ContactForm = ({ setView, onClose }) => {
 
   return (
     <>
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      <form className="contact-form inputs-group" onSubmit={handleSubmit} noValidate>
         <FormInput
           id="contact-name"
           name="name"
@@ -106,11 +106,16 @@ const ContactForm = ({ setView, onClose }) => {
           placeholder="Tell us how we can help..."
           error={messageError}
           required
-        />
+        /> 
 
-        <button type="submit" className="contact-form-submit">
-          Send Message
-        </button>
+        <div className="contact-btn">
+          <button
+                type="submit"
+                className="contact-btn-submit fonts-body"
+                aria-label="Confirm planting and deploy roots">
+                <span>Send Message</span>
+              </button>
+        </div>
       </form>
 
       {isSubmitted && (
@@ -118,27 +123,28 @@ const ContactForm = ({ setView, onClose }) => {
           className="contact-success-overlay"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="contact-success-title">
+          aria-labelledby="contact-success-title"> 
+
           <div className="contact-success-modal">
+
             <div className="contact-success-content">
-              <span className="contact-success-tag fonts-header">
+              <span className="contact-success-label fonts-header">
                 MESSAGE RECEIVED
               </span>
 
               <h2
                 id="contact-success-title"
-                className="contact-success-title fonts-header">
+                className="contact-success-title fonts-header-sub">
                 Your request has been completed.
               </h2>
 
               <p className="contact-success-text fonts-body">
-                Thank you for reaching out. Your message has been successfully
-                received. We will get back to you as soon as possible.
+                Thank you for reaching out. Your message has been successfully received. We will get back to you as soon as possible.
               </p>
 
               <button
                 aria-label="Return to main page"
-                className="contact-success-home fonts-body"
+                className="contact-success-home contact-close-link fonts-body"
                 onClick={onClose}>
                 Return to Surface ↗
               </button>
