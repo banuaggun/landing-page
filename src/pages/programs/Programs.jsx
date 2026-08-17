@@ -1,133 +1,213 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./programs.css";
+import "./program-fonts.css";
 
-const Programs = ({ setView, program }) => {
-  const programData = {
-    biodiversity: {
-      label: "PROGRAM 01",
-      title: "Biodiversity & Ecosystems",
-      intro:
-        "Protecting biodiversity and restoring healthy ecosystems through long-term conservation efforts.",
+const Programs = ({ program }) => {
+  useEffect(() => {
+    if (!program) return;
 
-      heroImage: "/images/programs/biodiversity-hero.jpg",
+    const element = document.getElementById(`program-${program}`);
 
-      sections: [
-        {
-          title: "Protecting Biodiversity",
-          text: "Our biodiversity initiatives focus on protecting species, habitats, and the natural systems that support life.",
-        },
-        {
-          title: "Ecosystem Restoration",
-          text: "We support restoration projects designed to strengthen ecosystems and improve their long-term resilience.",
-        },
-        {
-          title: "Working With Communities",
-          text: "Local communities are an essential part of successful conservation. Our projects work alongside communities to create sustainable solutions.",
-        },
-      ],
-    },
-
-    carbon: {
-      label: "PROGRAM 02",
-      title: "Carbon Offset Program",
-      intro:
-        "Supporting meaningful climate action through responsible carbon offset projects.",
-
-      heroImage: "/images/programs/carbon-hero.jpg",
-
-      sections: [
-        {
-          title: "Reducing Carbon Emissions",
-          text: "Our carbon initiatives support projects that contribute to reducing and balancing greenhouse gas emissions.",
-        },
-        {
-          title: "Verified Projects",
-          text: "We focus on transparent and measurable projects with clear environmental impact.",
-        },
-        {
-          title: "Long-Term Climate Impact",
-          text: "Our approach is designed to create lasting environmental benefits rather than short-term solutions.",
-        },
-      ],
-    },
-
-    forest: {
-      label: "PROGRAM 03",
-      title: "Forest Monitoring",
-      intro:
-        "Using fieldwork, technology, and data to monitor and protect forest ecosystems.",
-
-      heroImage: "/images/programs/forest-hero.jpg",
-
-      sections: [
-        {
-          title: "Monitoring Forests",
-          text: "We monitor forest areas to better understand changes, identify risks, and support conservation efforts.",
-        },
-        {
-          title: "Fieldwork & Data",
-          text: "Our teams combine field observations with data and technology to create a clearer picture of forest health.",
-        },
-        {
-          title: "Protecting Forest Ecosystems",
-          text: "Monitoring allows us to identify threats early and support effective long-term forest protection.",
-        },
-      ],
-    },
-  };
-
-  const currentProgram = programData[program];
-
-  if (!currentProgram) {
-    return (
-      <section className="program-page">
-        <div className="program-page-content">
-          <h1>Program not found.</h1>
-
-          <button onClick={() => setView("home")}>Back to Home</button>
-        </div>
-      </section>
-    );
-  }
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }, [program]);
 
   return (
-    <section className="program-page">
-      <div className="program-hero">
-        <div className="program-hero-content">
-          <span className="program-label">{currentProgram.label}</span>
+    <main className="program-page">
+      <div className="program-wrapper">
+        <div className="program-label fonts-header">Our programs</div>
 
-          <h1>{currentProgram.title}</h1>
-
-          <p>{currentProgram.intro}</p>
-        </div>
-
-        {currentProgram.heroImage && (
-          <div className="program-hero-image">
-            <img src={currentProgram.heroImage} alt={currentProgram.title} />
+        <div className="program-content">
+          <div className="program-text-block">
+            <h5 className="program-header fonts-header-sub">
+              Protecting nature,
+              <br />
+              creating a better future
+            </h5>
+            <p className="program-body fonts-body">
+              Our programs focus on protecting biodiversity, restoring
+              ecosystems, supporting climate action, and creating lasting
+              environmental impact.
+            </p>
           </div>
-        )}
+        </div>
       </div>
 
-      <div className="program-sections">
-        {currentProgram.sections.map((section, index) => (
-          <section className="program-content-section" key={index}>
-            <div className="program-section-number">
-              {String(index + 1).padStart(2, "0")}
+      {/* PROGRAM 01 - BIODIVERSITY */}
+
+      <section id="program-biodiversity" className="program-block">
+        <div className="program-wrapper">
+          <div className="program-items-area">
+            <div className="program-items-intro">
+              <div className="program-label fonts-header">Program 01</div>
+
+              <h2 className="program-header fonts-header-sub">
+                Biodiversity & Ecosystems
+              </h2>
+
+              <p className="program-body fonts-body">
+                Protecting biodiversity and restoring healthy ecosystems through
+                long-term conservation efforts.
+              </p>
             </div>
 
-            <div className="program-section-content">
-              <h2>{section.title}</h2>
+            <div className="program-items-list">
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  01 Protecting Biodiversity
+                </h3>
 
-              <p>{section.text}</p>
+                <p className="program-body fonts-body">
+                  Our biodiversity initiatives focus on protecting species,
+                  habitats, and the natural systems that support life.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  02 Ecosystem & Restoration
+                </h3>
+
+                <p className="program-body fonts-body">
+                  We support restoration projects designed to strengthen
+                  ecosystems and improve their long-term resilience.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  03 Working With Communities
+                </h3>
+
+                <p className="program-body fonts-body">
+                  Local communities are an essential part of successful
+                  conservation. Our projects work alongside communities to
+                  create sustainable solutions.
+                </p>
+              </div>
             </div>
-          </section>
-        ))}
-      </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="program-footer">
-        <button onClick={() => setView("home")}>Back to Home</button>
-      </div>
-    </section>
+      {/* PROGRAM 02 - CARBON */}
+
+      <section id="program-carbon" className="program-block">
+        <div className="program-wrapper">
+          <div className="program-items-area">
+            <div className="program-items-intro">
+              <div className="program-label fonts-header">Program 02</div>
+
+              <h2 className="program-header fonts-header-sub">
+                Carbon Offset Program
+              </h2>
+
+              <p className="program-body fonts-body">
+                Supporting meaningful climate action through responsible carbon
+                offset projects.
+              </p>
+            </div>
+
+            <div className="program-items-list">
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  01 Reducing Carbon Emissions
+                </h3>
+
+                <p className="program-body fonts-body">
+                  Our carbon initiatives support projects that contribute to
+                  reducing and balancing greenhouse gas emissions.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  02 Verified Projects
+                </h3>
+
+                <p className="program-body fonts-body">
+                  We focus on transparent and measurable projects with clear
+                  environmental impact.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  03 Long-Term Climate Impact
+                </h3>
+
+                <p className="program-body fonts-body">
+                  Our approach is designed to create lasting environmental
+                  benefits rather than short-term solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROGRAM 03 - FOREST */}
+
+      <section id="program-forest" className="program-block">
+        <div className="program-wrapper">
+          <div className="program-items-area">
+            <div className="program-items-intro">
+              <div className="program-label fonts-header">Program 03</div>
+
+              <h2 className="program-header fonts-header-sub">
+                Forest Monitoring
+              </h2>
+
+              <p className="program-body fonts-body">
+                Using fieldwork, technology, and data to monitor and protect
+                forest ecosystems.
+              </p>
+            </div>
+
+            <div className="program-items-list">
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  01 Monitoring Forests
+                </h3>
+
+                <p className="program-body fonts-body">
+                  We monitor forest areas to better understand changes, identify
+                  risks, and support conservation efforts.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  02 Fieldwork & Data
+                </h3>
+
+                <p className="program-body fonts-body">
+                  Our teams combine field observations with data and technology
+                  to create a clearer picture of forest health.
+                </p>
+              </div>
+
+              <div className="program-item">
+                <h3 className="program-label fonts-header">
+                  03 Protecting Forest Ecosystems
+                </h3>
+
+                <p className="program-body fonts-body">
+                  Monitoring allows us to identify threats early and support
+                  effective long-term forest protection.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 
