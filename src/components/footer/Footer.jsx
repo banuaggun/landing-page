@@ -28,12 +28,18 @@ const Footer = ({ setView }) => {
     }
   };
 
-  const companyLinks = ["About Us", "Contact Us", "Press"];
-  const programLinks = [
-    "Biodiversity & Ecosystems",
-    "Carbon Offset Program",
-    "Forest Monitoring",
+  const companyLinks = [
+    { label: "About Us", view: "about" },
+    { label: "Contact Us", view: "contact" },
+    { label: "Press", view: "press" },
   ];
+
+  const programLinks = [
+    { label: "Biodiversity & Ecosystems", view: "biodiversity" },
+    { label: "Carbon Offset Program", view: "carbon" },
+    { label: "Forest Monitoring", view: "forest" },
+  ];
+
   const serviceLinks = ["Community", "FAQ", "Support / Donate"];
   const legalLinks = ["Privacy Policy", "Terms & Conditions", "Return Policy"];
 
@@ -64,8 +70,12 @@ const Footer = ({ setView }) => {
                 <li key={index}>
                   <a
                     className="group-link fonts-header-sub"
-                    href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
-                    {link}
+                    href={`/${link.view}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setView(link.view);
+                    }}>
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -79,8 +89,12 @@ const Footer = ({ setView }) => {
                 <li key={index}>
                   <a
                     className="group-link fonts-header-sub"
-                    href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
-                    {link}
+                    href={`/programs/${link.view}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setView(link.view);
+                    }}>
+                    {link.label}
                   </a>
                 </li>
               ))}
