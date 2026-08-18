@@ -17,40 +17,31 @@ const Navbar = ({ setView, currentView }) => {
     } else if (currentView === "home" && activeLink === "") {
       setActiveLink("home");
     }
-  }, [currentView]);
+  }, [currentView]); 
 
-  const handleNavigation = (linkId, e, programName = null) => {
-    e.preventDefault();
 
-    if (setView) {
-      if (linkId === "about") {
-        setView("about");
-      } else if (linkId === "contact") {
-        setView("contact");
-      } else if (linkId === "programs" && programName) {
-        setView("programs", "amazon", programName);
-      } else {
-        setView("home");
-      }
-    }
+ 
+const handleNavigation = (linkId, e) => {
+  e.preventDefault();
 
-    setActiveLink(linkId);
-    setIsOpen(false);
-    setDropdownOpen(false);
+  if (setView) {
+    setView(linkId);
+  }
 
-    if (scrollTarget) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTarget);
+  setActiveLink(
+    ["biodiversity", "carbon", "forest"].includes(linkId)
+      ? "programs"
+      : linkId
+  );
 
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }, 100);
-    }
-  };
+  setIsOpen(false);
+  setDropdownOpen(false);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
 
   useEffect(() => {
@@ -72,61 +63,26 @@ const Navbar = ({ setView, currentView }) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
     };
-  }, []);
+  }, []); 
 
   useEffect(() => {
-    const sectionIds = [
-      "home",
-      "about",
-      "biodiversity",
-      "carbon",
-      "forest",
-      "contact",
-    ];
-    const observers = [];
-
-    const observerOptions = {
-      root: null,
-      rootMargin: "-40% 0px -50% 0px",
-      threshold: 0,
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (["biodiversity", "carbon", "forest"].includes(entry.target.id)) {
-            setActiveLink("programs");
-          } else {
-            setActiveLink(entry.target.id);
-          }
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions,
-    );
-
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-        observers.push({ observer, element });
-      }
-    });
-
-    return () => {
-      observers.forEach(({ observer, element }) => observer.unobserve(element));
-    };
-  }, [currentView]);
+  if (currentView === "action") {
+    setActiveLink("");
+  } else if (
+    ["biodiversity", "carbon", "forest"].includes(currentView)
+  ) {
+    setActiveLink("programs");
+  } else {
+    setActiveLink(currentView);
+  }
+}, [currentView]);
 
   return (
     <nav className="navbar" ref={navbarRef}>
       <div className="navbar-content">
         <div className="nav-left-group fonts-body">
           <a
-            href="#home"
+            href="/"
             className="logo"
             onClick={(e) => handleNavigation("home", e)}>
             <img src={isMobile ? logoMobile : logoWeb} alt="Tree Foundation" />
@@ -134,13 +90,13 @@ const Navbar = ({ setView, currentView }) => {
 
           <div className="desktop-menu-links">
             <a
-              href="#home"
+              href="/"
               className={activeLink === "home" ? "active" : ""}
               onClick={(e) => handleNavigation("home", e)}>
               Home
             </a>
             <a
-              href="#about"
+              href="/about"
               className={activeLink === "about" ? "active" : ""}
               onClick={(e) => handleNavigation("about", e)}>
               About Us
@@ -151,7 +107,7 @@ const Navbar = ({ setView, currentView }) => {
               onMouseEnter={() => !isMobile && setDropdownOpen(true)}
               onMouseLeave={() => !isMobile && setDropdownOpen(false)}>
               <a
-                href="#programs"
+                href="/programs"
                 className={`dropdown-trigger ${activeLink === "programs" ? "active" : ""}`}>
                 Programs{" "}
                 <span className={`arrow ${dropdownOpen ? "rotate" : ""}`}>
@@ -160,27 +116,27 @@ const Navbar = ({ setView, currentView }) => {
               </a>
               <div className="desktop-dropdown-menu">
                 <a
-                  href="#biodiversity"
+                  href="/programs/biodiversity"
                   onClick={(e) =>
-                    handleNavigation("programs", e, "biodiversity")
+                    handleNavigation("biodiversity", e)
                   }>
                   Biodiversity & Ecosystems
                 </a>
                 <a
-                  href="#carbon"
-                  onClick={(e) => handleNavigation("programs", e, "carbon")}>
+                  href="/programs/carbon"
+                  onClick={(e) => handleNavigation("carbon", e)}>
                   Carbon Offset Program
                 </a>
                 <a
-                  href="#forest"
-                  onClick={(e) => handleNavigation("programs", e, "forest")}>
+                  href="/programs/forest"
+                  onClick={(e) => handleNavigation("forest", e)}>
                   Forest Monitoring
                 </a>
               </div>
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               className={activeLink === "contact" ? "active" : ""}
               onClick={(e) => handleNavigation("contact", e)}>
               Contact Us
@@ -217,13 +173,13 @@ const Navbar = ({ setView, currentView }) => {
         <div className={`mobile-menu-overlay ${isOpen ? "open" : ""}`}>
           <div className="mobile-nav-links fonts-body">
             <a
-              href="#home"
+              href="/"
               className={activeLink === "home" ? "active" : ""}
               onClick={(e) => handleNavigation("home", e)}>
               Home
             </a>
             <a
-              href="#about"
+              href="/about"
               className={activeLink === "about" ? "about" : ""}
               onClick={(e) => handleNavigation("about", e)}>
               About Us
@@ -231,7 +187,7 @@ const Navbar = ({ setView, currentView }) => {
 
             <div className="mobile-dropdown-wrapper">
               <a
-                href="#programs"
+                href="/programs"
                 className="mobile-dropdown-trigger"
                 onClick={(e) => {
                   e.preventDefault();
@@ -245,26 +201,26 @@ const Navbar = ({ setView, currentView }) => {
               <div
                 className={`mobile-dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                 <a
-                  href="#biodiversity"
+                  href="/programs/biodiversity"
                   onClick={(e) =>
-                    handleNavigation("programs", e, "biodiversity")
+                    handleNavigation("biodiversity", e)
                   }>
                   Biodiversity & Ecosystems
                 </a>
                 <a
-                  href="#carbon"
-                  onClick={(e) => handleNavigation("programs", e, "carbon")}>
+                  href="/programs/carbon"
+                  onClick={(e) => handleNavigation("carbon", e)}>
                   Carbon Offset Program
                 </a>
                 <a
-                  href="#forest"
-                  onClick={(e) => handleNavigation("programs", e, "forest")}>
+                  href="/programs/forest"
+                  onClick={(e) => handleNavigation("forest", e)}>
                   Forest Monitoring
                 </a>
               </div>
             </div>
             <a
-              href="#contact"
+              href="/contact"
               className={activeLink === "contact" ? "active" : ""}
               onClick={(e) => handleNavigation("contact", e)}>
               Contact Us

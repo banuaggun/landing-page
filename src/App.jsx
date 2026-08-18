@@ -15,16 +15,21 @@ import ActionForm from "./components/common/form/ActionForm";
 
 import About from "./pages/about/About";
 import Contact from "./pages/contact/ContactPage";
-import Programs from "./pages/programs/Programs";
+import Programs from "./pages/programs/Programs"; 
+import Biodiversity from "./pages/programs/Biodiversity"; 
+import Carbon from "./pages/programs/Carbon"; 
+import Forest from "./pages/programs/Forest";
+
 
 function App() {
   const [view, setView] = useState(() => {
     return sessionStorage.getItem("current_view") || "home";
   });
-
+/*
   const [program, setProgram] = useState(() => {
     return sessionStorage.getItem("current_program") || null;
   });
+  */
 
   const [selectedFormRegion, setSelectedFormRegion] = useState(() => {
     return sessionStorage.getItem("selected_region") || "amazon";
@@ -34,11 +39,7 @@ function App() {
     setView(pageName);
     sessionStorage.setItem("current_view", pageName);
 
-    if (pageName === "programs") {
-      setProgram(programName);
-      sessionStorage.setItem("current_program", programName);
-      window.history.pushState(null, "", `/programs/${programName}`);
-    } else if (pageName === "action") {
+   if (pageName === "action") {
       setSelectedFormRegion(regionName);
       sessionStorage.setItem("selected_region", regionName);
       window.history.pushState(null, "", "/action");
@@ -46,6 +47,14 @@ function App() {
       window.history.pushState(null, "", "/");
     } else if (pageName === "about") {
       window.history.pushState(null, "", "/about");
+    } else if(pageName === "programs"){
+      window.history.pushState(null, "", "/programs");
+    } else if(pageName === "biodiversity"){
+      window.history.pushState(null, "", "/programs/biodiversity");
+    } else if(pageName === "carbon"){
+      window.history.pushState(null, "", "/programs/carbon");
+    } else if(pageName === "forest"){
+      window.history.pushState(null, "", "/programs/forest");
     } else if (pageName === "contact") {
       window.history.pushState(null, "", "/contact");
     } else {
@@ -94,7 +103,25 @@ function App() {
 
         {view === "programs" && (
           <section id="programs" className="content">
-            <Programs setView={navigateTo} program={program} />
+            <Programs setView={navigateTo} />
+          </section>
+        )} 
+
+        {view === "biodiversity" && (
+          <section id="biodiversity" className="content">
+            <Biodiversity setView={navigateTo} />
+          </section>
+        )} 
+
+        {view === "carbon" && ( 
+          <section id="carbon" className="content">
+            <Carbon setView={navigateTo} />
+          </section>
+        )} 
+
+        {view === "forest" && ( 
+          <section id="forest" className="content">
+            <Forest setView={navigateTo} />
           </section>
         )}
 
