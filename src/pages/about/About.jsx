@@ -12,7 +12,7 @@ const FieldworkIcon = () => (
   </div>
 );
 
-const About = () => {
+const About = ({setView}) => {
   return (
     <section className="about-page-section">
       <div className="about-wrapper">
@@ -142,13 +142,13 @@ const About = () => {
         </div>
       </div>
 
-      <Impact />
+      <Impact setView={setView} />
 
       <div className="metrics-content">
         <Metrics />
       </div>
       <div className="reinforce-content">
-        <Reinforce />
+        <Reinforce setView={setView} />
       </div>
     </section>
   );

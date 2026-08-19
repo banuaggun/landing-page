@@ -1,6 +1,8 @@
 import React from 'react'
 import "./programs.css";
 import "./program-fonts.css"; 
+import Impact from '../../components/impact/Impact';
+import Reinforce from '../../components/reinforce/Reinforce';
 
 const Biodiversity = ({setView}) => {
   return (
@@ -56,9 +58,12 @@ const Biodiversity = ({setView}) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+
+        <Impact setView={setView} /> 
+        <Reinforce setView={setView} />
       </section>
   )
 }
 
-export default Biodiversity
+export default Biodiversity;

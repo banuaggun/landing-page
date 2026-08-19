@@ -1,6 +1,7 @@
 import React from "react";
 import "./programs.css";
 import "./program-fonts.css";
+import Reinforce from "../../components/reinforce/Reinforce";
 
 const Programs = ({setview}) => {
 
@@ -23,8 +24,9 @@ const Programs = ({setview}) => {
             </p>
           </div>
         </div>
-      </div>
+      </div> 
 
+      <Reinforce setView={setView} />
       
     </main>
   );

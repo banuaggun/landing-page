@@ -1,6 +1,7 @@
 import React from 'react'
 import "./programs.css";
 import "./program-fonts.css"; 
+import Reinforce from '../../components/reinforce/Reinforce';
 
 const Carbon = ({setView}) => {
   return (
@@ -55,10 +56,11 @@ const Carbon = ({setView}) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+        <Reinforce setView={setView} />
       </section>
 
   )
 }
 
-export default Carbon
+export default Carbon;

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./programs.css";
 import "./program-fonts.css"; 
+import Reinforce from '../../components/reinforce/Reinforce';
 
 const Forest = ({setView}) => {
   return (
@@ -55,9 +56,10 @@ const Forest = ({setView}) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+        <Reinforce setView={setView} />
       </section>
   )
 }
 
-export default Forest
+export default Forest;
