@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
-import Products from "./components/products/Products";
 import Features from "./components/features/Features";
 import Metrics from "./components/metrics/Metrics";
 import Reinforce from "./components/reinforce/Reinforce";
@@ -25,11 +24,7 @@ function App() {
   const [view, setView] = useState(() => {
     return sessionStorage.getItem("current_view") || "home";
   });
-/*
-  const [program, setProgram] = useState(() => {
-    return sessionStorage.getItem("current_program") || null;
-  });
-  */
+
 
   const [selectedFormRegion, setSelectedFormRegion] = useState(() => {
     return sessionStorage.getItem("selected_region") || "amazon";
