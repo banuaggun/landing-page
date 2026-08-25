@@ -2,15 +2,15 @@
 
 An interactive environmental platform designed to communicate sustainability initiatives, explore ecosystem-focused programs, and turn environmental impact into a clear and engaging digital experience.
 
-The project combines a custom Figma design with a responsive ReactJS implementation, interactive program pages, dynamic impact experiences, and reusable UI components.
+The project combines a custom Figma design with a responsive ReactJS implementation, interactive program pages, dynamic impact experiences, a dedicated contact experience, and reusable UI components.
 
-> **Interactive environmental platform with ecosystem selection, dynamic impact calculations, validated planting workflow, personalized certificates and print/PDF support.**
+> **Interactive environmental platform with ecosystem selection, dynamic impact calculations, validated planting workflow, personalized certificates, contact interaction, and print/PDF support.**
 
 ---
 
 ## 🌱 Project Overview
 
-Green Foundation is a concept environmental platform focused on ecosystem restoration, biodiversity, carbon offsetting, and forest monitoring.
+Tree Foundation is a concept environmental platform focused on ecosystem restoration, biodiversity, carbon offsetting, and forest monitoring.
 
 The project was designed and developed from scratch with a strong focus on:
 
@@ -21,8 +21,9 @@ The project was designed and developed from scratch with a strong focus on:
 - Consistent visual language
 - Meaningful calls to action
 - Program-based content architecture
+- Interactive communication and contact experiences
 
-The goal was to create more than a static landing page by building an experience where users can explore environmental programs, discover environmental projects, calculate their potential impact, and receive a personalized planting certificate.
+The goal was to create more than a static landing page by building an experience where users can explore environmental programs, discover environmental projects, calculate their potential impact, personalize their environmental commitment, and interact with the foundation through dedicated workflows.
 
 ---
 
@@ -40,6 +41,7 @@ The goal was to create more than a static landing page by building an experience
 - Project information cards
 - Program-based navigation
 - Multiple CTA entry points for the planting workflow
+- Dedicated contact experience
 
 ### 🌱 Planting & Certificate Workflow
 
@@ -86,13 +88,43 @@ The process includes:
 
 This workflow was designed to make the user's environmental contribution feel tangible and personal rather than ending with a simple form submission.
 
+### 📩 Contact Experience
+
+The platform includes a dedicated **Contact** page designed to provide a direct and interactive communication experience.
+
+The page introduces the contact experience with the message:
+
+> **Let's Build a Greener Future**
+
+Users can select the reason they want to get in touch through an interactive dropdown before completing the contact form.
+
+The contact workflow includes:
+
+- Contact reason selection
+- Full name input
+- Email address input
+- Message field
+- Client-side email validation
+- Required field validation
+- Interactive error states
+- Submission confirmation modal
+- Return-to-home interaction
+
+After a valid submission, the interface displays a **Message Received** confirmation state to provide clear feedback to the user.
+
+The Contact page is implemented as a dedicated React page and uses reusable form components rather than a page-specific one-off form.
+
+> **Note:** The current implementation is frontend-focused. The contact form validates the submitted data and displays a successful submission state, but it does not currently connect to a backend email or database service.
+
 ### Session Storage
 
 The project uses the **Browser Session Storage API** to maintain relevant temporary user state during the current browsing session.
 
 This allows selected information and interaction state to persist while users navigate through the experience without requiring a backend database.
 
-### Program Pages
+---
+
+## 📄 Program Pages
 
 The platform includes dedicated pages for:
 
@@ -102,21 +134,54 @@ The platform includes dedicated pages for:
 
 Each program has its own content structure while maintaining a consistent visual system throughout the platform.
 
-### Global Impact
+### Program 01 — Biodiversity & Ecosystems
 
-The interactive impact section allows users to explore environmental projects through a map-based interface.
+Focuses on protecting biodiversity, restoring habitats, strengthening ecosystems, and supporting local communities.
 
-Users can select project locations to view project-specific information and environmental metrics.
+### Program 02 — Carbon Offset Program
 
-The impact experience is designed to make environmental work feel tangible rather than presenting it only as static statistics.
+Focuses on responsible carbon offset initiatives, verified projects, and long-term climate impact.
 
-### Responsive Design
+### Program 03 — Forest Monitoring
 
-The interface was developed with responsive behavior in mind to provide a consistent experience across:
+Focuses on monitoring forest ecosystems through fieldwork, data, and technology.
 
-- Desktop
-- Tablet
-- Mobile
+---
+
+## 🗺️ Interactive Impact Map
+
+The Global Impact section uses an interactive map to showcase environmental projects.
+
+Project locations can be selected to reveal additional information such as:
+
+- Project name
+- Project duration
+- Seeds / trees
+- Target impact
+- Project-specific information
+- Call-to-action
+
+This interaction was designed to transform environmental statistics into an explorable experience.
+
+Rather than presenting environmental impact only as static numbers, the map allows users to explore individual project locations and discover additional project information.
+
+---
+
+## 🌍 Environmental Programs
+
+The content architecture is organized around three main environmental areas.
+
+### Biodiversity & Ecosystems
+
+Protecting species, restoring habitats, strengthening ecosystems, and supporting local communities.
+
+### Carbon Offset Program
+
+Supporting measurable climate action through responsible and transparent carbon initiatives.
+
+### Forest Monitoring
+
+Using field observations, data, and technology to understand forest health and identify environmental risks.
 
 ---
 
@@ -135,6 +200,8 @@ The design process included:
 - Navigation structure
 - Program page design
 - Impact and map sections
+- Contact page design
+- Form and interaction states
 
 The final interface was then translated from the Figma design into a functional React application.
 
@@ -142,7 +209,7 @@ The final interface was then translated from the Figma design into a functional 
 
 The project was intentionally developed from the original design rather than relying on a pre-built template.
 
-This allowed the visual system, spacing, typography, and components to remain consistent between the design and implementation.
+This allowed the visual system, spacing, typography, interactions, and reusable components to remain consistent between the design and implementation.
 
 ---
 
@@ -172,6 +239,7 @@ This allowed the visual system, spacing, typography, and components to remain co
 - Client-side form validation
 - Session-based state persistence
 - Browser print / PDF functionality
+- Reusable form components
 
 No CSS framework was used. The interface was styled using **plain CSS** to have full control over the visual design and responsive behavior.
 
@@ -191,8 +259,11 @@ Examples include:
 - Program sections
 - Action form
 - Certificate
+- Contact page
+- Contact form
 - Dropdown
 - Form input
+- Form message
 - CTA / Reinforce sections
 - Shared typography styles
 
@@ -200,11 +271,15 @@ The **ActionForm** component handles the main planting workflow, including ecosy
 
 The **Certificate** component creates a personalized certificate based on the user's submitted information and provides a print / Save PDF action.
 
+The **ContactPage** component combines the contact introduction, reason selection, reusable contact form, and reinforcement section into a dedicated communication experience.
+
+The **ContactForm** component manages form state, email validation, message validation, error states, and submission feedback.
+
 This component-based approach makes it easier to maintain visual consistency and reuse sections across different pages.
 
 ---
 
-## 📄 Pages
+## 📑 Pages
 
 ### Home
 
@@ -218,52 +293,25 @@ The About page presents the foundation's mission, approach, environmental impact
 
 The platform contains three main environmental programs:
 
-#### Program 01 — Biodiversity & Ecosystems
+- Biodiversity & Ecosystems
+- Carbon Offset Program
+- Forest Monitoring
 
-Focuses on protecting biodiversity, restoring habitats, strengthening ecosystems, and supporting local communities.
+### Contact
 
-#### Program 02 — Carbon Offset Program
+The Contact page provides a dedicated communication experience where users can choose a reason for contacting the foundation and submit their name, email address, and message.
 
-Focuses on responsible carbon offset initiatives, verified projects, and long-term climate impact.
+The page includes:
 
-#### Program 03 — Forest Monitoring
+- Interactive contact reason selection
+- Form validation
+- Email format validation
+- Required field validation
+- Submission feedback
+- Confirmation modal
+- Return-to-home interaction
 
-Focuses on monitoring forest ecosystems through fieldwork, data, and technology.
-
----
-
-## 🗺️ Interactive Impact Map
-
-The Global Impact section uses an interactive map to showcase environmental projects.
-
-Project locations can be selected to reveal additional information such as:
-
-- Project name
-- Project duration
-- Seeds / trees
-- Target impact
-- Project-specific information
-- Call-to-action
-
-This interaction was designed to transform environmental statistics into an explorable experience.
-
----
-
-## 🌍 Environmental Programs
-
-The content architecture is organized around three main areas:
-
-**Biodiversity & Ecosystems**
-
-Protecting species, restoring habitats, strengthening ecosystems, and supporting local communities.
-
-**Carbon Offset Program**
-
-Supporting measurable climate action through responsible and transparent carbon initiatives.
-
-**Forest Monitoring**
-
-Using field observations, data, and technology to understand forest health and identify environmental risks.
+The contact experience was designed to feel like a natural extension of the platform rather than a generic standalone form.
 
 ---
 
@@ -280,7 +328,15 @@ Responsive considerations include:
 - Flexible content sections
 - Mobile-friendly interactions
 - Responsive cards and map elements
-- Responsive forms and certificate layouts
+- Responsive forms
+- Responsive certificate layouts
+- Responsive contact experience
+
+The goal was to maintain a consistent visual and interactive experience across:
+
+- Desktop
+- Tablet
+- Mobile
 
 ---
 
@@ -294,19 +350,20 @@ The main goals of the project were to:
 4. Develop interactive environmental content instead of a purely static landing page.
 5. Build a complete planting and certificate workflow.
 6. Implement client-side form validation and dynamic calculations.
-7. Maintain visual consistency across all pages.
-8. Create a responsive experience without relying on a CSS framework.
-9. Use browser-based Session Storage to manage temporary user state.
-10. Provide a personalized certificate with print / Save PDF functionality.
-11. Practice building a complete frontend portfolio project from design to implementation.
+7. Create a dedicated and reusable contact experience.
+8. Maintain visual consistency across all pages.
+9. Create a responsive experience without relying on a CSS framework.
+10. Use browser-based Session Storage to manage temporary user state.
+11. Provide a personalized certificate with print / Save PDF functionality.
+12. Practice building a complete frontend portfolio project from design to implementation.
 
 ---
 
 ## 🔗 Project Links
 
-### GitHub
+### Live Demo
 
-[View the source code on GitHub](https://github.com/banuaggun/landing-page)
+[View the live Tree Foundation website](https://landing-page-khaki-five-41.vercel.app/)
 
 ### Behance
 
@@ -320,7 +377,13 @@ This project is also featured in my personal portfolio, where you can explore th
 
 [Visit my portfolio](https://portfolio-banuaggun.vercel.app/)
 
-> Interested in more of my work? Feel free to explore my portfolio to see other projects I've designed and developed.
+### LinkedIn
+
+Connect with me on LinkedIn to explore my professional background, experience, and other work.
+
+[LinkedIn Profile](https://www.linkedin.com/in/banuaggun/?locale=en-US)
+
+> Interested in more of my work? Feel free to explore my portfolio and professional profiles to see other projects I've designed and developed.
 
 ---
 
@@ -373,6 +436,10 @@ This project covers the complete design-to-development workflow:
 - Client-side form validation
 - Personalized certificate generation
 - Print / Save PDF functionality
+- Contact page development
+- Contact form development
+- Form validation and error states
+- Submission confirmation experience
 - Session Storage implementation
 - Responsive behavior
 - Portfolio presentation
@@ -384,9 +451,19 @@ The project was developed as a frontend-focused portfolio piece to demonstrate b
 
 ## 🌿 Final Thoughts
 
-Green Foundation was created as an exploration of how environmental platforms can communicate impact through thoughtful visual design and interaction.
+Tree Foundation was created as an exploration of how environmental platforms can communicate impact through thoughtful visual design and interaction.
 
-Rather than presenting sustainability information as a collection of static pages, the project focuses on creating a more interactive journey where users can explore programs, discover environmental projects, calculate their potential contribution, and receive a personalized certificate.
+Rather than presenting sustainability information as a collection of static pages, the project focuses on creating a more interactive journey where users can:
+
+- Explore environmental programs
+- Discover environmental projects
+- Interact with project locations
+- Calculate their potential contribution
+- Personalize their environmental commitment
+- Generate a digital environmental certificate
+- Connect with the foundation through an interactive contact experience
+
+The project combines visual storytelling with practical frontend interaction to demonstrate how a concept environmental platform can become a complete digital experience rather than simply a static landing page.
 
 **Designed in Figma. Built with ReactJS, JavaScript, and pure CSS.**
 
@@ -394,4 +471,4 @@ Rather than presenting sustainability information as a collection of static page
 
 © 2026 Banu Ağgün. All rights reserved.
 
-[Portfolio](https://portfolio-banuaggun.vercel.app/) · [Behance](https://www.behance.net/gallery/252660503/Green-Foundation-Landing-Page) · [GitHub](https://github.com/banuaggun/landing-page)
+[Portfolio](https://portfolio-banuaggun.vercel.app/) · [Behance](https://www.behance.net/gallery/252660503/Green-Foundation-Landing-Page) · [LinkedIn](https://www.linkedin.com/in/banuaggun/?locale=en-US)
